@@ -12,6 +12,13 @@ module.exports = {
         },
         'gatsby-plugin-styled-components',
         'gatsby-plugin-image',
+        {
+            resolve: 'gatsby-plugin-google-fonts',
+            options: {
+                fonts: [`open sans`],
+                display: 'swap',
+            },
+        },
         // {
         //   resolve: "gatsby-plugin-google-analytics",
         //   options: {

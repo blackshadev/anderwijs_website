@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import WysiwygContent from '../components/WysiwygContent';
+import MainLayout from '../components/Layout/Main/MainLayout';
 
 type PageData = {
     title: string;
@@ -8,7 +9,11 @@ type PageData = {
 };
 
 const Page = ({ data: { page } }: { data: { page: PageData } }) => {
-    return <WysiwygContent content={page.content} />;
+    return (
+        <MainLayout>
+            <WysiwygContent content={page.content} />
+        </MainLayout>
+    );
 };
 
 export default Page;

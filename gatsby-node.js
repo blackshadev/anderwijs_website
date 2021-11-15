@@ -1,5 +1,6 @@
 const path = require(`path`);
 const { slash } = require(`gatsby-core-utils`);
+
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -24,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
     } = graphQlResult;
 
     const pageTemplate = path.resolve(`./src/templates/Page.tsx`);
-    console.log(allPages.map((p) => p.uri));
+
     allPages.forEach((page) => {
         createPage({
             path: page.uri,
