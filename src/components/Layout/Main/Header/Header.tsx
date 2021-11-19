@@ -3,10 +3,14 @@ import Navigation from '../../../Navigation';
 import { HeaderContainer, HeaderWrapper } from './components';
 import HeaderLogo from './HeaderLogo';
 
-const Header: React.FunctionComponent = () => {
+type Props = {
+    withBorder: boolean;
+};
+
+const Header: React.FunctionComponent<Props> = ({ withBorder }) => {
     return (
         <HeaderWrapper>
-            <HeaderContainer>
+            <HeaderContainer withBorder={withBorder}>
                 <HeaderLogo />
                 <Navigation />
             </HeaderContainer>

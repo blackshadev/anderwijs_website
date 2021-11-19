@@ -5,13 +5,13 @@ import Content from './Content/Content';
 import Footer from './Footer';
 import Header from './Header';
 
-type Props = React.PropsWithChildren<Record<string, unknown>>;
+type Props = React.PropsWithChildren<{ withHeaderBorder: boolean }>;
 
-const MainLayout: React.FunctionComponent<Props> = ({ children }) => (
+const MainLayout: React.FunctionComponent<Props> = ({ children, withHeaderBorder }) => (
     <React.Fragment>
         <GlobalStyle />
         <Helmet />
-        <Header />
+        <Header withBorder={withHeaderBorder} />
         <Content>{children}</Content>
         <Footer />
     </React.Fragment>

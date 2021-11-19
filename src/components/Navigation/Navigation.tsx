@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { mapMenu } from '../../support/mappers/menuMapper';
-import { RawMenuQuery } from '../../support/types/menu';
+import { RawMenuQuery } from '../../support/types/Menu';
 import { NavContainer } from './components';
 import MenuItem from './MenuItem';
 

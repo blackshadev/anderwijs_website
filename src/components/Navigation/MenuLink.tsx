@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { MenuItem } from '../../support/types/menu';
+import { MenuItem } from '../../support/types/Menu';
 
 type Props = {
     item: MenuItem;

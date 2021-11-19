@@ -25,6 +25,16 @@ module.exports = {
             },
         },
         `gatsby-plugin-image`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                    formats: [`auto`, `webp`],
+                    placeholder: `blurred`,
+                },
+            },
+        },
+        `gatsby-transformer-sharp`,
 
         // {
         //   resolve: "gatsby-plugin-google-analytics",

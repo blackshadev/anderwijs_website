@@ -1,4 +1,4 @@
-import { Menu, MenuItem, RawMenuItem, RawMenuQuery } from '../types/menu';
+import { Menu, MenuItem, RawMenuItem, RawMenuQuery } from '../types/Menu';
 
 export function mapMenu(menu: RawMenuQuery): Menu {
     function mapItem(

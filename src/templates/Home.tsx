@@ -24,7 +24,7 @@ const Home = ({ data: { page } }: { data: { page: PageData } }) => {
     });
 
     return (
-        <MainLayout>
+        <MainLayout withHeaderBorder={false}>
             <HomeHeader images={images} />
             <WysiwygContent content={page.content} />
         </MainLayout>

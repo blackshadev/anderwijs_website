@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { MenuItem as MenuItemInput } from '../../support/types/menu';
+import { MenuItem as MenuItemInput } from '../../support/types/Menu';
 import MenuLink from './MenuLink';
 
 export type Props = {

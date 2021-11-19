@@ -3,6 +3,7 @@ import spacing from '../../../styling/spacing';
 
 export const HomeHeaderContainer = styled.div`
     margin-top: ${spacing.lg};
+    margin-bottom: ${spacing.lg};
     img {
         width: 100%;
     }
