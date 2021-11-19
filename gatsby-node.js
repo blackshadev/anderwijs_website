@@ -24,15 +24,24 @@ exports.createPages = async ({ graphql, actions }) => {
         },
     } = graphQlResult;
 
-    const pageTemplate = path.resolve(`./src/templates/Page.tsx`);
-
     allPages.forEach((page) => {
+        const pageComponent = path.resolve(getTemplatePath(page));
+
         createPage({
             path: page.uri,
-            component: slash(pageTemplate),
+            component: slash(pageComponent),
             context: {
                 id: page.id,
             },
         });
     });
 };
+
+function getTemplatePath(page) {
+    switch (page.uri) {
+        case '/':
+            return `./src/templates/Home.tsx`;
+        default:
+            return `./src/templates/Page.tsx`;
+    }
+}

@@ -4,6 +4,8 @@ import colors from '../styling/colors';
 import spacing from '../styling/spacing';
 
 const Content = styled.div`
+    padding: ${spacing.xl} 0 0 0;
+
     .hr {
         background: ${colors.green};
         height: 8px;
