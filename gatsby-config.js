@@ -18,6 +18,7 @@ module.exports = {
             options: {
                 url: 'https://www.anderwijs.nl/graphql',
                 html: {
+                    fallbackImageMaxWidth: null,
                     gatsbyImageOptions: {
                         placeholder: 'none',
                     },
