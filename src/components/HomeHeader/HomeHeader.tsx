@@ -1,5 +1,5 @@
 import React, { ReactChild, useState } from 'react';
-import useInterval from '../../../hooks/useInterval';
+import useInterval from '../../hooks/useInterval';
 import { HomeHeaderContainer } from './components';
 
 type Props = {

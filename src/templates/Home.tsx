@@ -1,17 +1,27 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import WysiwygContent from '../components/WysiwygContent';
+import WysiwygContent from '../components/WysiwygContent/WysiwygContent';
 import MainLayout from '../components/Layout/Main/MainLayout';
-import HomeHeader from '../components/Layout/Home/HomeHeader';
+import HomeHeader from '../components/HomeHeader/HomeHeader';
 import image1 from '../images/home-header/bijles-1a.jpg';
 import image2 from '../images/home-header/bijles-4a.jpg';
+import YoastSeo from '../components/Seo';
 
 type PageData = {
     title: string;
     content: string;
+    seo: {
+        fullHead: string;
+    };
 };
 
-const Home = ({ data: { page } }: { data: { page: PageData } }) => {
+type Props = {
+    data: {
+        page: PageData;
+    };
+};
+
+const Home: React.FunctionComponent<Props> = ({ data: { page } }) => {
     const images = [image1, image2].map((path) => {
         return (
             <img
@@ -25,6 +35,7 @@ const Home = ({ data: { page } }: { data: { page: PageData } }) => {
 
     return (
         <MainLayout withHeaderBorder={false}>
+            <YoastSeo html={page.seo.fullHead} />
             <HomeHeader images={images} />
             <WysiwygContent content={page.content} />
         </MainLayout>
@@ -38,6 +49,9 @@ export const query = graphql`
         page: wpPage(id: { eq: $id }) {
             title
             content
+            seo {
+                fullHead
+            }
         }
     }
 `;

@@ -56,4 +56,13 @@ export default createGlobalStyle`
     p {
         margin-bottom: ${spacing.md};
     }
+
+    a {
+        color: ${colors.green};
+        text-decoration: none;
+        &:hover {
+            color: ${colors.darkGreen};
+            text-decoration: underline;
+        }
+    }
 `;

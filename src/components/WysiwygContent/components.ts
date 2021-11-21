@@ -1,8 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
-import colors from '../styling/colors';
+import colors from '../../styling/colors';
+import spacing from '../../styling/spacing';
 
-const Content = styled.div`
+export const Content = styled.div`
     .hr {
         background: ${colors.green};
         height: 8px;
@@ -29,10 +29,16 @@ const Content = styled.div`
     p {
         text-align: justify;
     }
+
+    .table td {
+        padding: ${spacing.sm};
+        line-height: 18px;
+        text-align: left;
+        vertical-align: top;
+        border-top: 1px solid ${colors.lightGrey};
+    }
+
+    .gatsby-image-wrapper.full-width {
+        width: 100%;
+    }
 `;
-
-const WysiwygContent = ({ content }: { content: string }) => {
-    return <Content dangerouslySetInnerHTML={{ __html: content }}></Content>;
-};
-
-export default WysiwygContent;
