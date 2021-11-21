@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SkipToContentContext } from '../SkipToContent/SkipToContent';
 import { Content } from './components';
 
 type Props = {
@@ -6,7 +7,13 @@ type Props = {
 };
 
 const WysiwygContent: React.FunctionComponent<Props> = ({ content }) => {
-    return <Content dangerouslySetInnerHTML={{ __html: content }}></Content>;
+    const targetId = useContext(SkipToContentContext);
+    return (
+        <Content
+            id={targetId}
+            dangerouslySetInnerHTML={{ __html: content }}
+        ></Content>
+    );
 };
 
 export default WysiwygContent;

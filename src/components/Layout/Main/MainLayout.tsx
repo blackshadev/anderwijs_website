@@ -1,5 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import SkipToContent from '../../../components/SkipToContent';
+import { SkipToContentContext } from '../../SkipToContent/SkipToContent';
 import GlobalStyle from '../GlobalStyle';
 import Content from './Content/Content';
 import Footer from './Footer';
@@ -14,9 +16,12 @@ const MainLayout: React.FunctionComponent<Props> = ({
     <React.Fragment>
         <GlobalStyle />
         <Helmet />
-        <Header withBorder={withHeaderBorder} />
-        <Content>{children}</Content>
-        <Footer />
+        <SkipToContentContext.Provider value="main-content">
+            <SkipToContent />
+            <Header withBorder={withHeaderBorder} />
+            <Content>{children}</Content>
+            <Footer />
+        </SkipToContentContext.Provider>
     </React.Fragment>
 );
 
