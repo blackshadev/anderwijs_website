@@ -11,7 +11,9 @@ const MenuFocusContext = createContext<{
     setFocussed(v: boolean): void;
 }>({
     focussed: false,
-    setFocussed(v: boolean): void {},
+    setFocussed(): void {
+        /* noop */
+    },
 });
 
 const SubMenu: React.FunctionComponent<{ items: MenuItemInput[] }> = ({

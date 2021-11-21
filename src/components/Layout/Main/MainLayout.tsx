@@ -7,7 +7,10 @@ import Header from './Header';
 
 type Props = React.PropsWithChildren<{ withHeaderBorder: boolean }>;
 
-const MainLayout: React.FunctionComponent<Props> = ({ children, withHeaderBorder }) => (
+const MainLayout: React.FunctionComponent<Props> = ({
+    children,
+    withHeaderBorder,
+}) => (
     <React.Fragment>
         <GlobalStyle />
         <Helmet />

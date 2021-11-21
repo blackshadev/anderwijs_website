@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
 import reset from '!!raw-loader!./stylesheets/reset.css';
 import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';

@@ -1,4 +1,4 @@
-import styled, { css, ThemedStyledFunction } from 'styled-components';
+import styled, { css } from 'styled-components';
 import spacing from '../../../../styling/spacing';
 import Container from '../../../Container';
 import React from 'react';
