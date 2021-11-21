@@ -16,12 +16,13 @@ type PageData = {
 };
 
 type Props = {
+    path: string;
     data: {
         page: PageData;
     };
 };
 
-const Home: React.FunctionComponent<Props> = ({ data: { page } }) => {
+const Home: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
     const images = [image1, image2].map((path) => {
         return (
             <img
@@ -35,7 +36,7 @@ const Home: React.FunctionComponent<Props> = ({ data: { page } }) => {
 
     return (
         <MainLayout withHeaderBorder={false}>
-            <YoastSeo html={page.seo.fullHead} />
+            <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             <HomeHeader images={images} />
             <WysiwygContent content={page.content} />
         </MainLayout>

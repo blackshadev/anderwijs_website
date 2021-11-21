@@ -8,14 +8,17 @@ import { PageData } from '../support/types/PageData';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import YoastSeo from '../components/Seo';
 
-type Props = { data: { page: PageData } };
+type Props = {
+    data: { page: PageData };
+    path: string;
+};
 
-const Page: React.FunctionComponent<Props> = ({ data: { page } }) => {
+const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
     const breadcrumbs = breadcrumbsForPage(page);
 
     return (
         <MainLayout withHeaderBorder>
-            <YoastSeo html={page.seo.fullHead} />
+            <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             <Breadcrumbs breadcrumbs={breadcrumbs} />
             <PageHeader page={page} />
             <WysiwygContent content={page.content} />

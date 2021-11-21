@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://www.anderwijs.nl',
+        siteUrl: 'https://gatsby.anderwijs.nl',
         title: 'Anderwijs',
     },
     plugins: [
@@ -10,7 +10,6 @@ module.exports = {
             resolve: 'gatsby-plugin-google-fonts',
             options: {
                 fonts: [`open sans`],
-                display: 'swap',
             },
         },
         {
@@ -50,5 +49,6 @@ module.exports = {
                 icon: 'src/images/icon.png',
             },
         },
+        'gatsby-plugin-robots-txt',
     ],
 };
