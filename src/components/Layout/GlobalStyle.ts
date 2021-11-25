@@ -32,9 +32,8 @@ export default createGlobalStyle`
         }
     }
 
-    h1, h2, h3 {
+    h1, h2 {
         margin-top: ${spacing.lg};
-        font-weight: 600;
     }
 
     h1 {
@@ -45,6 +44,14 @@ export default createGlobalStyle`
 
     h2, h3 {
         font-size: ${fontSizes.lg};
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    h3 {
+        margin-top: ${spacing.md};
     }
 
     

@@ -13,6 +13,40 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-source-custom-api',
+            options: {
+                url: 'https://aas2.anderwijs.nl/cal/part',
+                rootKey: 'aasUpcomingEvents',
+                schemas: {
+                    aasUpcomingEvents: `
+                        id: Int
+                        naam: String
+                        code: String
+                        voordag_tekst: String
+                        datum_voordag: String
+                        tijd_voordag: String
+                        weekdag_start: String
+                        datum_start: String
+                        tijd_start: String
+                        weekdag_eind: String
+                        datum_eind: String
+                        tijd_eind: String
+                        aantal_dagen: Int
+                        kamphuis_naam: String
+                        kamphuis_adres: String
+                        kamphuis_postcode: String
+                        kamphuis_plaats: String
+                        kamphuis_telefoon: String
+                        kamphuis_website: String
+                        kamphuis_mapslink: String
+                        prijs: String
+                        beschrijving: String
+                        kleur: String
+                    `,
+                },
+            },
+        },
+        {
             resolve: 'gatsby-source-wordpress',
             options: {
                 url: 'https://www.anderwijs.nl/graphql',

@@ -7,11 +7,29 @@ import { breadcrumbsForPage } from '../support/mappers/breadcrumbsMapper';
 import { PageData } from '../support/types/PageData';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import YoastSeo from '../components/Seo';
+import UpcomingEvents from '../components/Sidebar-Widgets/UpcomingEvents';
+import styled from 'styled-components';
+import spacing from '../styling/spacing';
 
 type Props = {
     data: { page: PageData };
     path: string;
 };
+
+const SplitPanel = styled.div`
+    display: flex;
+
+    & > div {
+        flex: 1;
+        margin-right: ${spacing.xl};
+
+        &:last-child {
+            flex: 0;
+            min-width: 370px;
+            margin: 0;
+        }
+    }
+`;
 
 const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
     const breadcrumbs = breadcrumbsForPage(page);
@@ -21,7 +39,10 @@ const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             <Breadcrumbs breadcrumbs={breadcrumbs} />
             <PageHeader page={page} />
-            <WysiwygContent content={page.content} />
+            <SplitPanel>
+                <WysiwygContent content={page.content} />
+                <UpcomingEvents />
+            </SplitPanel>
         </MainLayout>
     );
 };
