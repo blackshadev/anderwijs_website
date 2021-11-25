@@ -42,8 +42,7 @@ const UpcomingEvents: React.FunctionComponent = () => {
     );
 
     return (
-        <UpcomingEventsContainer>
-            <h2>Kampagenda</h2>
+        <>
             <UpcomingEventsList>
                 {events.map((event: UpcomingEvent) => {
                     return (
@@ -60,7 +59,17 @@ const UpcomingEvents: React.FunctionComponent = () => {
             <Link to="/onze-bijleskampen/kampagenda/">
                 Volledige kampagenda
             </Link>
-        </UpcomingEventsContainer>
+            <p>
+                Onze kampen zijn ook te vinden op{' '}
+                <a
+                    href="https://zomerkampen.net"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Zomerkampen.net
+                </a>
+            </p>
+        </>
     );
 };
 

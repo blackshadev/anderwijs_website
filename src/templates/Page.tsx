@@ -10,6 +10,10 @@ import YoastSeo from '../components/Seo';
 import UpcomingEvents from '../components/Sidebar-Widgets/UpcomingEvents';
 import styled from 'styled-components';
 import spacing from '../styling/spacing';
+import Widget from '../components/Sidebar-Widgets/Widget';
+import WidgetSidebar from '../components/Sidebar-Widgets';
+import Youtube from '../components/Sidebar-Widgets/YoutubeVideoEmbed/YoutubeVideoEmbed';
+import FacebookPageEmbed from '../components/Sidebar-Widgets/FacebookPageEmbed';
 
 type Props = {
     data: { page: PageData };
@@ -41,7 +45,27 @@ const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
             <PageHeader page={page} />
             <SplitPanel>
                 <WysiwygContent content={page.content} />
-                <UpcomingEvents />
+                <WidgetSidebar>
+                    <Widget title="Kampagenda">
+                        <UpcomingEvents />
+                    </Widget>
+
+                    <Widget title="Anderwijs in beeld">
+                        <Youtube
+                            title="Anderwijs in beeld"
+                            videoId="wHu8itM2xTQ"
+                        />
+                    </Widget>
+
+                    <Widget title="Anderwijs op Facebook">
+                        <FacebookPageEmbed
+                            page="anderwijs"
+                            title="Anderwijs - bijleskampen: leren en vakantie in één"
+                        />
+                    </Widget>
+
+                    <Widget title="Anderwijs op Instagram"></Widget>
+                </WidgetSidebar>
             </SplitPanel>
         </MainLayout>
     );
