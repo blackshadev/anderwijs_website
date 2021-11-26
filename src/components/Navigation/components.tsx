@@ -1,12 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from '../../styling/colors';
 import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';
+import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
 import { notSrOnly, srOnly } from '../../styling/sr';
 
 export const NavContainer = styled.nav`
     width: 100%;
+
+    & > ul {
+        & > li > a {
+            border-top: 6px solid transparent;
+
+            &.--active {
+                border-top: 6px solid ${colors.green};
+            }
+        }
+    }
 
     ul {
         display: flex;
@@ -46,7 +57,6 @@ export const NavContainer = styled.nav`
             display: inline-block;
             text-decoration: none;
             color: ${colors.foreground};
-            font-size: ${fontSizes.lg};
             font-weight: 600;
             font-family: ${fonts.header};
             letter-spacing: 1px;
@@ -54,6 +64,16 @@ export const NavContainer = styled.nav`
             &:focus-visible {
                 text-decoration: underline;
             }
+
+            ${fromSize.md(css`
+                font-size: ${fontSizes.md};
+                padding-top: ${spacing.xl};
+            `)}
+
+            ${fromSize.lg(css`
+                font-size: ${fontSizes.xl};
+                padding-top: ${spacing.xxl};
+            `)}
         }
 
         ul a {
@@ -71,6 +91,11 @@ export const NavContainer = styled.nav`
             &:focus {
                 color: ${colors.green};
                 background-color: ${colors.background};
+            }
+
+            &.--active {
+                background-color: ${colors.background};
+                color: ${colors.green};
             }
         }
     }

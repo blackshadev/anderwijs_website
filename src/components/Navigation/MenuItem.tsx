@@ -16,9 +16,9 @@ const MenuFocusContext = createContext<{
     },
 });
 
-const SubMenu: React.FunctionComponent<{ items: MenuItemInput[] }> = ({
-    items,
-}) => {
+const SubMenu: React.FunctionComponent<{
+    items: MenuItemInput[];
+}> = ({ items }) => {
     const { focussed } = useContext(MenuFocusContext);
 
     return (

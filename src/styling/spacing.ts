@@ -4,4 +4,5 @@ export default {
     md: '1rem',
     lg: '2rem',
     xl: '4rem',
+    xxl: '5rem',
 };

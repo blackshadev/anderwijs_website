@@ -17,7 +17,7 @@ export default createGlobalStyle`
         line-height: 120%;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
         font-family: ${fonts.header};
         margin-bottom: ${spacing.md};
         letter-spacing: 1px;
@@ -32,18 +32,23 @@ export default createGlobalStyle`
         }
     }
 
+    h4, h5, h6 {
+        margin-top: ${spacing.md};
+        margin-bottom: ${spacing.sm};
+    }
+
     h1, h2 {
         margin-top: ${spacing.lg};
     }
 
     h1 {
-        font-size: ${fontSizes.xl};
+        font-size: ${fontSizes.xxl};
         border-bottom: 1px solid ${colors.lightGrey};
         padding-bottom: 2rem;
     }
 
     h2, h3 {
-        font-size: ${fontSizes.lg};
+        font-size: ${fontSizes.xl};
     }
 
     h2 {
@@ -51,7 +56,8 @@ export default createGlobalStyle`
     }
 
     h3 {
-        margin-top: ${spacing.md};
+        margin-top: ${spacing.lg};
+        margin-bottom: ${spacing.sm};
     }
 
     

@@ -4,6 +4,7 @@ import Container from '../../../Container';
 import React from 'react';
 import image from '../../../../images/header.gif';
 import withProps from '../../../../support/styling/withProps';
+import { fromSize } from '../../../../styling/screenSizes';
 
 const withBackground = css`
     background: url(${image}) no-repeat 50% 100%;
@@ -25,4 +26,23 @@ export const HeaderContainer = withProps<
 
 export const HeaderWrapper = styled.header`
     margin-bottom: ${spacing.md};
+`;
+
+export const StyledImg = styled.img`
+    object-fit: contain;
+    margin-right: ${spacing.md};
+    width: 140px;
+
+    ${fromSize.md(
+        css`
+            margin-right: ${spacing.xl};
+            width: 220px;
+        `,
+    )}
+
+    ${fromSize.lg(
+        css`
+            width: 270px;
+        `,
+    )}
 `;

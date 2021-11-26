@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styling/colors';
+import fontSizes from '../../styling/fontSizes';
 import spacing from '../../styling/spacing';
 
 export const Content = styled.div`
@@ -10,6 +11,16 @@ export const Content = styled.div`
         margin: 36px 0 31px 0;
         line-height: 0;
         font-size: 0;
+    }
+
+    hr {
+        margin: 18px 0;
+        border: 0;
+        border-top: 1px solid #eee;
+    }
+
+    strong {
+        font-weight: 600;
     }
 
     .row {
@@ -40,5 +51,66 @@ export const Content = styled.div`
 
     .gatsby-image-wrapper.full-width {
         width: 100%;
+    }
+
+    .wp-block-image {
+        .aligncenter {
+            text-align: center;
+        }
+        .alignright {
+            float: right;
+            margin: ${spacing.md} 0 ${spacing.md} ${spacing.md};
+        }
+    }
+
+    .btn-reg.btn-reg-inv {
+        border: 1px solid ${colors.darkGreen};
+        color: ${colors.darkGreen};
+        display: block;
+        padding: ${spacing.md};
+        text-align: center;
+        font-size: ${fontSizes.xl};
+
+        &:hover {
+            text-decoration: none;
+            color: ${colors.background};
+            background: ${colors.green};
+        }
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    blockquote {
+        border-left: 5px solid ${colors.lightGrey};
+        padding: ${spacing.sm} ${spacing.md};
+        margin-bottom: ${spacing.lg};
+
+        p {
+            font-size: ${fontSizes.lg};
+            margin: 0;
+        }
+
+        cite {
+            font-style: italic;
+            padding-left: ${spacing.sm};
+        }
+    }
+
+    ul {
+        list-style: initial;
+        margin-left: ${spacing.lg};
+        margin-bottom: ${spacing.md};
+    }
+
+    .wp-block-columns {
+        display: flex;
+        flex-wrap: nowrap;
+
+        .wp-block-column {
+            flex-basis: 0;
+            flex-grow: 1;
+        }
     }
 `;

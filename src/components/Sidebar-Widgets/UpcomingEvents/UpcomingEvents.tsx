@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { UpcomingEventsContainer, UpcomingEventsList } from './components';
+import { UpcomingEventsExternalLink, UpcomingEventsList } from './components';
 
 const UPCOMING_EVENTS = graphql`
     query UpcomingEvents {
@@ -59,7 +59,7 @@ const UpcomingEvents: React.FunctionComponent = () => {
             <Link to="/onze-bijleskampen/kampagenda/">
                 Volledige kampagenda
             </Link>
-            <p>
+            <UpcomingEventsExternalLink>
                 Onze kampen zijn ook te vinden op{' '}
                 <a
                     href="https://zomerkampen.net"
@@ -68,7 +68,7 @@ const UpcomingEvents: React.FunctionComponent = () => {
                 >
                     Zomerkampen.net
                 </a>
-            </p>
+            </UpcomingEventsExternalLink>
         </>
     );
 };

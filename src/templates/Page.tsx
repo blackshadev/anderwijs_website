@@ -63,8 +63,6 @@ const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
                             title="Anderwijs - bijleskampen: leren en vakantie in één"
                         />
                     </Widget>
-
-                    <Widget title="Anderwijs op Instagram"></Widget>
                 </WidgetSidebar>
             </SplitPanel>
         </MainLayout>
