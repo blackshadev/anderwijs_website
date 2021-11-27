@@ -41,6 +41,8 @@ function getTemplatePath(page) {
     switch (page.uri) {
         case '/':
             return `./src/templates/Home.tsx`;
+        case '/vrijwilligers/ledenagenda/':
+            return `./src/templates/Ledenagenda.tsx`;
         default:
             return `./src/templates/Page.tsx`;
     }

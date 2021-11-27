@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import WysiwygContent from '../components/WysiwygContent/WysiwygContent';
 import { PageData } from '../support/types/PageData';
 import GenericPage from '../components/Layout/Main/GenericPage';
+import MemberUpcomingEvents from '../components/MemberUpcomingEvents';
 
 type Props = {
     data: { page: PageData };
@@ -12,7 +13,8 @@ type Props = {
 const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
     return (
         <GenericPage page={page} path={path}>
-            <WysiwygContent content={page.content} />;
+            <WysiwygContent content={page.content} />
+            <MemberUpcomingEvents />
         </GenericPage>
     );
 };

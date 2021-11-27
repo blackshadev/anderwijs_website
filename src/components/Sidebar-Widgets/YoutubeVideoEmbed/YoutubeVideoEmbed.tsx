@@ -5,7 +5,10 @@ type Props = {
     title: string;
 };
 
-const Youtube: React.FunctionComponent<Props> = ({ videoId, title }) => {
+const YoutubeVideoEmbed: React.FunctionComponent<Props> = ({
+    videoId,
+    title,
+}) => {
     return (
         <iframe
             src={`https://www.youtube-nocookie.com/embed/${videoId}`}
@@ -17,4 +20,4 @@ const Youtube: React.FunctionComponent<Props> = ({ videoId, title }) => {
     );
 };
 
-export default Youtube;
+export default YoutubeVideoEmbed;
