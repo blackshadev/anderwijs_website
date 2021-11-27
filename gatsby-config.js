@@ -56,6 +56,11 @@ module.exports = {
                         placeholder: 'none',
                     },
                 },
+                type: {
+                    Page: {
+                        beforeChangeNode: './updateWordpressPages.js',
+                    },
+                },
             },
         },
         `gatsby-plugin-image`,

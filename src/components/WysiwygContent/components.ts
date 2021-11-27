@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styling/colors';
+import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';
 import spacing from '../../styling/spacing';
 
@@ -70,6 +71,7 @@ export const Content = styled.div`
         padding: ${spacing.md};
         text-align: center;
         font-size: ${fontSizes.xl};
+        cursor: pointer;
 
         &:hover {
             text-decoration: none;
@@ -111,6 +113,59 @@ export const Content = styled.div`
         .wp-block-column {
             flex-basis: 0;
             flex-grow: 1;
+
+            &:not(:first-child) {
+                margin-left: ${spacing.md};
+            }
+        }
+    }
+
+    p.field {
+        input {
+            height: 24px;
+        }
+
+        input,
+        textarea {
+            font-family: ${fonts.normal};
+            padding: ${spacing.xs};
+            margin: 0;
+            border: 1px solid ${colors.lightGrey};
+        }
+    }
+
+    input[type='submit'] {
+        background: ${colors.background};
+        color: ${colors.darkGreen};
+        border: 1px solid ${colors.darkGreen};
+        padding: ${spacing.sm} ${spacing.md};
+        cursor: pointer;
+
+        &:hover {
+            background: ${colors.green};
+            color: ${colors.background};
+        }
+    }
+
+    label {
+        margin-bottom: ${spacing.sm};
+    }
+
+    input:focus-visible {
+        outline: 1px solid ${colors.darkGreen};
+    }
+
+    input[type='text'] {
+        border: 1px solid ${colors.lightGrey};
+        padding: ${spacing.md};
+    }
+
+    /** Mollie form overwrite */
+    input[name='dmm_currency'] + span {
+        overflow: initial !important;
+
+        input {
+            float: none !important;
         }
     }
 `;
