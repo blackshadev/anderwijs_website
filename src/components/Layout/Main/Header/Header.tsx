@@ -5,14 +5,15 @@ import HeaderLogo from './HeaderLogo';
 
 type Props = {
     withBorder: boolean;
+    location: Location;
 };
 
-const Header: React.FunctionComponent<Props> = ({ withBorder }) => {
+const Header: React.FunctionComponent<Props> = ({ withBorder, location }) => {
     return (
         <HeaderWrapper>
             <HeaderContainer withBorder={withBorder}>
                 <HeaderLogo />
-                <Navigation />
+                <Navigation location={location} />
             </HeaderContainer>
         </HeaderWrapper>
     );

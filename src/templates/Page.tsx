@@ -7,11 +7,17 @@ import GenericPage from '../components/Layout/Main/GenericPage';
 type Props = {
     data: { page: PageData };
     path: string;
+    location: Location;
 };
 
-const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
+const Page: React.FunctionComponent<Props> = ({
+    data: { page },
+    path,
+    location,
+}) => {
+    console.log(location);
     return (
-        <GenericPage page={page} path={path}>
+        <GenericPage page={page} path={path} location={location}>
             <WysiwygContent content={page.content} />;
         </GenericPage>
     );

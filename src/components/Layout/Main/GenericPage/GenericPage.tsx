@@ -15,17 +15,19 @@ import { ContentContainer, SplitPanel } from './components';
 type Props = {
     page: PageData;
     path: string;
+    location: Location;
 };
 
 const GenericPage: React.FunctionComponent<React.PropsWithChildren<Props>> = ({
     page,
     path,
     children,
+    location,
 }) => {
     const breadcrumbs = breadcrumbsForPage(page);
 
     return (
-        <MainLayout withHeaderBorder>
+        <MainLayout location={location} withHeaderBorder>
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             <Breadcrumbs breadcrumbs={breadcrumbs} />
             <PageHeader page={page} />

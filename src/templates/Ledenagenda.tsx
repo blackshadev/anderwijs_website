@@ -8,11 +8,16 @@ import MemberUpcomingEvents from '../components/MemberUpcomingEvents';
 type Props = {
     data: { page: PageData };
     path: string;
+    location: Location;
 };
 
-const Page: React.FunctionComponent<Props> = ({ data: { page }, path }) => {
+const Page: React.FunctionComponent<Props> = ({
+    data: { page },
+    path,
+    location,
+}) => {
     return (
-        <GenericPage page={page} path={path}>
+        <GenericPage location={location} page={page} path={path}>
             <WysiwygContent content={page.content} />
             <MemberUpcomingEvents />
         </GenericPage>

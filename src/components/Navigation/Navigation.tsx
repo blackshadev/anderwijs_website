@@ -32,12 +32,15 @@ const MENU_QUERY = graphql`
     }
 `;
 
+type Props = {
+    location: Location;
+};
+
 function handleSelect(event: ChangeEvent<HTMLSelectElement>): void {
-    console.log(event);
     navigate(event.target.value);
 }
 
-const Navigation: React.FunctionComponent = () => {
+const Navigation: React.FunctionComponent<Props> = ({ location }) => {
     const wpMenu = useStaticQuery<RawMenuQuery>(MENU_QUERY);
 
     const menu = mapMenu(wpMenu);
@@ -51,7 +54,7 @@ const Navigation: React.FunctionComponent = () => {
             </NavigationDesktop>
             <NavigationMobile
                 onChange={handleSelect}
-                defaultValue={window.location.pathname}
+                defaultValue={location.pathname}
             >
                 {menu.items.map((item) => (
                     <MenuOption depth={0} key={item.key} item={item} />
