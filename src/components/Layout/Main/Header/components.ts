@@ -6,24 +6,6 @@ import image from '../../../../images/header.gif';
 import withProps from '../../../../support/styling/withProps';
 import { fromSize } from '../../../../styling/screenSizes';
 
-const withBackground = css`
-    background: url(${image}) no-repeat 50% 100%;
-`;
-
-export const HeaderContainer = withProps<
-    React.PropsWithChildren<{ withBorder: boolean }>
->()(styled(Container))`
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: ${spacing.lg};
-    
-    ${(props: React.PropsWithChildren<{ withBorder: boolean }>) => {
-        if (props.withBorder) {
-            return withBackground;
-        }
-    }}
-`;
-
 export const HeaderWrapper = styled.header`
     margin-bottom: ${spacing.md};
 `;
@@ -31,7 +13,11 @@ export const HeaderWrapper = styled.header`
 export const StyledImg = styled.img`
     object-fit: contain;
     margin-right: ${spacing.md};
-    width: 140px;
+    width: 100%;
+
+    ${fromSize.sm(css`
+        width: 140px;
+    `)}
 
     ${fromSize.md(
         css`
@@ -45,4 +31,23 @@ export const StyledImg = styled.img`
             width: 270px;
         `,
     )}
+`;
+
+const withBackground = css`
+    background: url(${image}) no-repeat 50% 100%;
+`;
+
+export const HeaderContainer = withProps<
+    React.PropsWithChildren<{ withBorder: boolean }>
+>()(styled(Container))`
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: ${spacing.lg};
+    flex-wrap: wrap;
+    
+    ${(props: React.PropsWithChildren<{ withBorder: boolean }>) => {
+        if (props.withBorder) {
+            return withBackground;
+        }
+    }}
 `;

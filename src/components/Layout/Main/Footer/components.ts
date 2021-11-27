@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import image from '../../../../images/header.gif';
+import { fromSize } from '../../../../styling/screenSizes';
 import spacing from '../../../../styling/spacing';
 import Container from '../../../Container/Container';
 
@@ -12,8 +13,17 @@ export const FooterContainer = styled(Container)`
     padding-top: ${spacing.lg};
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     div {
+        min-width: 100%;
+        margin-bottom: ${spacing.md};
+
+        ${fromSize.sm(
+            css`
+                min-width: auto;
+            `,
+        )}
     }
 `;

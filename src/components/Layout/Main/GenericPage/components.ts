@@ -1,17 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { fromSize } from '../../../../styling/screenSizes';
 import spacing from '../../../../styling/spacing';
 
 export const SplitPanel = styled.div`
     display: flex;
+    flex-wrap: wrap;
 
     & > div,
     & > section {
         flex: 1;
-        margin-right: ${spacing.xl};
+        min-width: 100%;
+
+        ${fromSize.sm(css`
+            min-width: auto;
+            margin-right: ${spacing.xl};
+            &:last-child {
+                min-width: 370px;
+            }
+        `)}
 
         &:last-child {
             flex: 0;
-            min-width: 370px;
             margin: 0;
         }
     }

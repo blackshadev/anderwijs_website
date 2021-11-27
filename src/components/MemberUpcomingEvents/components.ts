@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { fromSize } from '../../styling/screenSizes';
+import styled from 'styled-components';
 import spacing from '../../styling/spacing';
 
 export const Container = styled.section``;
@@ -11,16 +10,10 @@ export const EventDetails = styled.div`
     flex-wrap: wrap;
 
     dl {
-        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 0;
     }
-
-    ${fromSize.md(css`
-        dl {
-            flex-grow: 1;
-            flex-shrink: 0;
-            flex-basis: 0;
-        }
-    `)}
 `;
 
 export const EventDefinitions = styled.dl`

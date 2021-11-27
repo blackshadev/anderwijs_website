@@ -1,9 +1,14 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import { graphql, navigate, useStaticQuery } from 'gatsby';
+import React, { ChangeEvent } from 'react';
 import { mapMenu } from '../../support/mappers/menuMapper';
 import { RawMenuQuery } from '../../support/types/Menu';
-import { NavContainer } from './components';
+import {
+    NavigationDesktop,
+    NavContainer,
+    NavigationMobile,
+} from './components';
 import MenuItem from './MenuItem';
+import MenuOption from './MenuOption';
 
 const MENU_QUERY = graphql`
     query MainMenuQuery {
@@ -27,6 +32,11 @@ const MENU_QUERY = graphql`
     }
 `;
 
+function handleSelect(event: ChangeEvent<HTMLSelectElement>): void {
+    console.log(event);
+    navigate(event.target.value);
+}
+
 const Navigation: React.FunctionComponent = () => {
     const wpMenu = useStaticQuery<RawMenuQuery>(MENU_QUERY);
 
@@ -34,11 +44,19 @@ const Navigation: React.FunctionComponent = () => {
 
     return (
         <NavContainer>
-            <ul>
+            <NavigationDesktop>
                 {menu.items.map((item) => (
                     <MenuItem key={item.key} item={item} />
                 ))}
-            </ul>
+            </NavigationDesktop>
+            <NavigationMobile
+                onChange={handleSelect}
+                defaultValue={location.pathname}
+            >
+                {menu.items.map((item) => (
+                    <MenuOption depth={0} key={item.key} item={item} />
+                ))}
+            </NavigationMobile>
         </NavContainer>
     );
 };
