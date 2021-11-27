@@ -51,7 +51,7 @@ const Navigation: React.FunctionComponent = () => {
             </NavigationDesktop>
             <NavigationMobile
                 onChange={handleSelect}
-                defaultValue={location.pathname}
+                defaultValue={window.location.pathname}
             >
                 {menu.items.map((item) => (
                     <MenuOption depth={0} key={item.key} item={item} />
