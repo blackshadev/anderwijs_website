@@ -31,7 +31,7 @@ const QUERY = graphql`
 type UpcomingEvent = {
     code: string;
     name: string;
-    preparation_day: string;
+    preparation_day?: string;
     date_start: string;
     time_start: string;
     date_end: string;
@@ -61,7 +61,7 @@ const MemberUpcomingEvents: React.FunctionComponent = () => {
                         <EventDefinitions>
                             <dt>Voordag</dt>
                             <dd>
-                                {edge.node.preparation_day.replace(
+                                {edge.node.preparation_day?.replace(
                                     /<[^>]+>/g,
                                     '',
                                 )}
