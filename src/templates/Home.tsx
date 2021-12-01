@@ -43,7 +43,7 @@ const Home: React.FunctionComponent<Props> = ({
         <MainLayout location={location} withHeaderBorder={false}>
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             <HomeHeader images={images} />
-            <WysiwygContent content={page.content} />
+            <WysiwygContent content={page.content} location={location} />
         </MainLayout>
     );
 };

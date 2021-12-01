@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const AasCalSchema = `
     id: Int
     naam: String
@@ -24,9 +26,13 @@ const AasCalSchema = `
     kleur: String
 `;
 
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://gatsby.anderwijs.nl',
+        siteUrl: process.env.SITE_URL,
         title: 'Anderwijs',
     },
     plugins: [
@@ -41,7 +47,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-custom-api',
             options: {
-                url: 'https://aas2.anderwijs.nl/cal/part',
+                url: `${process.env.AAS_URL}/cal/part`,
                 rootKey: 'aasUpcomingEvents',
                 schemas: {
                     aasUpcomingEvents: AasCalSchema,
@@ -51,7 +57,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-custom-api',
             options: {
-                url: 'https://aas2.anderwijs.nl/cal/full',
+                url: `${process.env.AAS_URL}/cal/full`,
                 rootKey: 'aasUpcomingEventsFull',
                 schemas: {
                     aasUpcomingEventsFull: AasCalSchema,
@@ -61,7 +67,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-wordpress',
             options: {
-                url: 'https://www.anderwijs.nl/graphql',
+                url: process.env.GRAPHQL_URL,
                 html: {
                     fallbackImageMaxWidth: null,
                     gatsbyImageOptions: {

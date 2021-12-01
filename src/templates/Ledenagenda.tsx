@@ -18,7 +18,7 @@ const Page: React.FunctionComponent<Props> = ({
 }) => {
     return (
         <GenericPage location={location} page={page} path={path}>
-            <WysiwygContent content={page.content} />
+            <WysiwygContent content={page.content} location={location} />
             <MemberUpcomingEvents />
         </GenericPage>
     );

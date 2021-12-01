@@ -131,6 +131,7 @@ export const Content = styled.div`
             padding: ${spacing.xs};
             margin: 0;
             border: 1px solid ${colors.lightGrey};
+            width: 100%;
         }
     }
 

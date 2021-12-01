@@ -1,4 +1,5 @@
 import React from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Helmet } from 'react-helmet';
 import SkipToContent from '../../../components/SkipToContent';
 import { SkipToContentContext } from '../../SkipToContent/SkipToContent';
@@ -18,14 +19,20 @@ const MainLayout: React.FunctionComponent<Props> = ({
     location,
 }) => (
     <React.Fragment>
-        <GlobalStyle />
-        <Helmet />
-        <SkipToContentContext.Provider value="main-content">
-            <SkipToContent />
-            <Header location={location} withBorder={withHeaderBorder} />
-            <Content>{children}</Content>
-            <Footer />
-        </SkipToContentContext.Provider>
+        <GoogleReCaptchaProvider
+            useRecaptchaNet
+            reCaptchaKey={process.env.RECAPTCHA_KEY}
+            scriptProps={{ async: true, defer: true, appendTo: 'body' }}
+        >
+            <GlobalStyle />
+            <Helmet />
+            <SkipToContentContext.Provider value="main-content">
+                <SkipToContent />
+                <Header location={location} withBorder={withHeaderBorder} />
+                <Content>{children}</Content>
+                <Footer />
+            </SkipToContentContext.Provider>
+        </GoogleReCaptchaProvider>
     </React.Fragment>
 );
 
