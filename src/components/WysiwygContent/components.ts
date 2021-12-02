@@ -135,19 +135,6 @@ export const Content = styled.div`
         }
     }
 
-    input[type='submit'] {
-        background: ${colors.background};
-        color: ${colors.darkGreen};
-        border: 1px solid ${colors.darkGreen};
-        padding: ${spacing.sm} ${spacing.md};
-        cursor: pointer;
-
-        &:hover {
-            background: ${colors.green};
-            color: ${colors.background};
-        }
-    }
-
     label {
         margin-bottom: ${spacing.sm};
     }

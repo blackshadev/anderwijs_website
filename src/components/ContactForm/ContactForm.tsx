@@ -1,16 +1,35 @@
 import React, { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import axios, { AxiosError } from 'axios';
+import { ErrorList, SubmitButton } from './components';
 
 function isAxiosError(error: Error): error is AxiosError {
     return (error as any).isAxiosError;
 }
 
+function getLaravelValidationError(data: {
+    message?: string;
+    errors?: { [key: string]: string[] };
+}): string[] {
+    if (!data.errors) {
+        return [data.message];
+    }
+
+    return Object.values(data.errors).flat();
+}
+
 const ContactForm: React.FunctionComponent = () => {
     const { executeRecaptcha } = useGoogleReCaptcha();
-    const [error, setError] = useState<string>();
+    const [errors, setErrors] = useState<string[]>([]);
+    const [isLoading, setLoading] = useState<boolean>(false);
+    const [messages, setMessages] = useState<string[]>([]);
+    const [isSend, setSend] = useState<boolean>(false);
 
     async function submit(event: React.FormEvent): Promise<void> {
+        setLoading(true);
+        setErrors([]);
+        setMessages([]);
+
         event.preventDefault();
 
         const token = await executeRecaptcha();
@@ -19,43 +38,65 @@ const ContactForm: React.FunctionComponent = () => {
         formData.set('recaptcha', token);
 
         try {
-            await axios.post(
+            const response = await axios.post(
                 `${process.env.AAS_URL}/api/contact-form`,
                 formData,
             );
+
+            setMessages(response.data.messages);
+            setSend(true);
         } catch (error) {
             if (!isAxiosError(error)) {
                 throw error;
             }
-            console.error(error.response);
-            setError(error.toString());
+
+            let errors = getLaravelValidationError(error.response.data);
+            if (errors.length === 0) {
+                errors = [error.toString()];
+            }
+
+            setErrors(errors);
+        } finally {
+            setLoading(false);
         }
     }
 
     return (
         <form onSubmit={submit}>
-            <p className="field">
-                <input name="name" type="text" placeholder="Naam" />
-            </p>
-
-            <p className="field">
-                <input name="email" type="text" placeholder="E-Mail" />
-            </p>
-
-            <p className="field">
-                <input name="phone" type="text" placeholder="Telefoonnummer" />
-            </p>
-
-            <p className="field">
-                <textarea
-                    name="message"
-                    placeholder="Bericht"
-                    cols={40}
-                    rows={10}
-                />
-            </p>
-            <p>{error}</p>
-            <input type="submit" />
+            {!isSend && (
+                <>
+                    <p className="field">
+                        <input name="name" type="text" placeholder="Naam" />
+                    </p>
+                    <p className="field">
+                        <input name="email" type="text" placeholder="E-Mail" />
+                    </p>
+                    <p className="field">
+                        <input
+                            name="phone"
+                            type="text"
+                            placeholder="Telefoonnummer"
+                        />
+                    </p>
+                    <p className="field">
+                        <textarea
+                            name="message"
+                            placeholder="Bericht"
+                            cols={40}
+                            rows={10}
+                        />
+                    </p>
+                    <SubmitButton type="submit" disabled={isLoading} />
+                </>
+            )}
+            {errors.length !== 0 && (
+                <ErrorList>
+                    {errors.map((error) => (
+                        <li key={error}>{error}</li>
+                    ))}
+                </ErrorList>
+            )}
+            {messages.length !== 0 && <p>{messages}</p>}
         </form>
     );
 };
