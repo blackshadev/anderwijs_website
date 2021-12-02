@@ -19,6 +19,16 @@ jobs:
             - name: Lint
               run: yarn run lint
 
+            - name: Create .env file
+              uses: SpicyPizza/create-envfile@v1
+              with:
+                  envkey_WORDPRESS_URL: ${{ secrets.WORDPRESS_URL }}
+                  envkey_GRAPHQL_URL: ${{ secrets.GRAPHQL_URL }}
+                  envkey_SITE_URL: ${{ secrets.SITE_URL }}
+                  envkey_AAS_URL: ${{ secrets.AAS_URL }}
+                  envkey_RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
+                  file_name: .env.production
+
             - name: Build
               run: yarn run build
               env:
