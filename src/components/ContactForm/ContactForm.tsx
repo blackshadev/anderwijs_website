@@ -50,9 +50,14 @@ const ContactForm: React.FunctionComponent = () => {
                 throw error;
             }
 
-            let errors = getLaravelValidationError(error.response.data);
+            let errors = [];
+
+            if (error.response?.data) {
+                errors = getLaravelValidationError(error.response.data);
+            }
+
             if (errors.length === 0) {
-                errors = [error.toString()];
+                errors = [error.message];
             }
 
             setErrors(errors);
@@ -86,7 +91,11 @@ const ContactForm: React.FunctionComponent = () => {
                             rows={10}
                         />
                     </p>
-                    <SubmitButton type="submit" disabled={isLoading} />
+                    <SubmitButton
+                        type="submit"
+                        disabled={isLoading}
+                        value="Verstuur"
+                    />
                 </>
             )}
             {errors.length !== 0 && (

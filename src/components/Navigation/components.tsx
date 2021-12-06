@@ -93,6 +93,7 @@ export const NavigationDesktop = styled.ul`
         &:focus {
             color: ${colors.green};
             background-color: ${colors.background};
+            text-decoration: none;
         }
 
         &.--active {
