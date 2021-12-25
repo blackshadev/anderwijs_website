@@ -1,6 +1,10 @@
 name: Update blog
 
-on: [push, repository_dispatch]
+on: [push, repository_dispatch, workflow_dispatch]
+
+concurrency:
+    group: ${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
     update:
