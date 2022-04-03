@@ -38,10 +38,16 @@ jobs:
               env:
                   GATSBY_ENV: 'prod'
             - name: Upload
-              uses: sebastianpopp/ftp-action@releases/v2
+              uses: SamKirkland/FTP-Deploy-Action@4.3.0
               with:
-                  host: anderwijs.nl
-                  user: ${{ secrets.FTP_USERNAME }}
+                  server: anderwijs.nl
+                  username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
-                  remoteDir: ''
-                  localDir: 'public'
+                  local-dir: './public/'
+                  exclude: |
+                      **/aas2/**
+                      **/start/**
+                      **/wp/**
+                      **/wiki/**
+                      **/aardbei/**
+                      **/cgi-bin/**
