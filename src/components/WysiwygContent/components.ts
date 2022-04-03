@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import colors from '../../styling/colors';
 import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';
+import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
 
 export const Content = styled.div`
@@ -26,12 +27,17 @@ export const Content = styled.div`
 
     .row {
         display: flex;
+        flex-wrap: wrap;
     }
 
     .span3 {
         flex: 1;
-        width: 270px;
+        min-width: 100%;
         margin-left: 30px;
+
+        ${fromSize.md`
+            min-width: auto;
+        `}
     }
 
     iframe {
