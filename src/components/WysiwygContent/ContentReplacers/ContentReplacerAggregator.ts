@@ -1,25 +1,24 @@
-import { DOMNode } from 'html-react-parser';
-import { ReactElement } from 'react';
-
-export interface Replacer {
-    test(location: Location, node: DOMNode): boolean;
-    getNode(location: Location, node: DOMNode): ReactElement;
-}
+import { ContentReplacerCollection } from './ContentReplacerCollection';
+import { Replacer } from './Replacer';
 
 export default class ContentReplacerAggregator {
     private replacers: Array<Replacer> = [];
 
-    public get(location: Location, node: DOMNode): false | ReactElement {
-        for (const r of this.replacers) {
-            if (r.test(location, node)) {
-                return r.getNode(location, node);
-            }
-        }
-
-        return false;
+    public getReplacers(location: Location): ContentReplacerCollection {
+        return ContentReplacerCollection.fromIterable(
+            this.filterReplacers(location),
+        );
     }
 
     public add(replacer: Replacer): void {
         this.replacers.push(replacer);
+    }
+
+    private *filterReplacers(location: Location): Iterable<Replacer> {
+        for (const replacer of this.replacers) {
+            if (replacer.acceptsRoute(location)) {
+                yield replacer;
+            }
+        }
     }
 }

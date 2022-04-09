@@ -1,18 +1,18 @@
 import React, { ReactElement } from 'react';
 import { DOMNode, Element } from 'html-react-parser';
-import { Replacer as ContentReplacer } from './ContentReplacerAggregator';
+import { Replacer as ContentReplacer } from './Replacer';
 import ContactForm from '../../ContactForm';
 
 export default class ReplaceContactForm implements ContentReplacer {
-    public test(location: Location, node: DOMNode): boolean {
-        return (
-            location.pathname === '/contact/contactgegevens/' &&
-            node instanceof Element &&
-            node.tagName === 'form'
-        );
+    public acceptsRoute(location: Location): boolean {
+        return location.pathname === '/contact/contactgegevens/';
     }
 
-    public getNode(location: Location, node: DOMNode): ReactElement {
+    public supportsNode(node: DOMNode): boolean {
+        return node instanceof Element && node.tagName === 'form';
+    }
+
+    public getNode(node: DOMNode): ReactElement {
         return <ContactForm />;
     }
 }

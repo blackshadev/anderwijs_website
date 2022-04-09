@@ -1,22 +1,9 @@
 import React, { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { ErrorList, SubmitButton } from './components';
-
-function isAxiosError(error: Error): error is AxiosError {
-    return (error as any).isAxiosError;
-}
-
-function getLaravelValidationError(data: {
-    message?: string;
-    errors?: { [key: string]: string[] };
-}): string[] {
-    if (!data.errors) {
-        return [data.message];
-    }
-
-    return Object.values(data.errors).flat();
-}
+import isAxiosError from '../../support/axios/isAxiosError';
+import getLaravelValidationError from '../../support/laravel/getLaravelValidationError';
 
 const ContactForm: React.FunctionComponent = () => {
     const { executeRecaptcha } = useGoogleReCaptcha();
