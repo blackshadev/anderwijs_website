@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import isAxiosError from '../../support/axios/isAxiosError';
 import getLaravelValidationError from '../../support/laravel/getLaravelValidationError';
+import normalizeNumber from '../../support/normalizeNumber';
 import { ErrorList, SubmitButton } from '../ContactForm/components';
 
 const DonateForm: React.FC = () => {
@@ -14,12 +15,14 @@ const DonateForm: React.FC = () => {
         event.preventDefault();
         setLoading(true);
         setErrors([]);
-        const formData = new FormData(event.target as HTMLFormElement);
 
         try {
             const response = await axios.post<{ url: string }>(
                 `${process.env.AAS_URL}/donate`,
-                formData,
+                {
+                    name: name,
+                    amount: normalizeNumber(amount),
+                },
             );
 
             window.location.assign(response.data.url);
