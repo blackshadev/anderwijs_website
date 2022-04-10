@@ -15,11 +15,14 @@ const WysiwygContent: React.FunctionComponent<Props> = ({
 }) => {
     const targetId = useContext(SkipToContentContext);
 
+    const replacers = contentReplacers.getReplacers(location);
+
     const htmlContent = parse(content, {
-        replace(domNode) {
-            return contentReplacers.get(location, domNode);
-        },
+        replace: replacers.hasItems()
+            ? (domNode) => replacers.replace(domNode)
+            : undefined,
     });
+
     return <Content id={targetId}>{htmlContent}</Content>;
 };
 
