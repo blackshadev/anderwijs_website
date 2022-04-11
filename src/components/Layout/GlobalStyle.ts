@@ -51,7 +51,7 @@ export default createGlobalStyle`
         font-size: ${fontSizes.xl};
     }
 
-    h2 {
+    h2, h3 {
         font-weight: 600;
     }
 

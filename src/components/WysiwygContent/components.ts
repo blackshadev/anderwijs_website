@@ -27,6 +27,15 @@ export const Content = styled.div`
         font-weight: 600;
     }
 
+    // Fix for bad html
+    h4,
+    h5,
+    h5 {
+        strong {
+            font-weight: normal;
+        }
+    }
+
     .row {
         display: flex;
         flex-wrap: wrap;
