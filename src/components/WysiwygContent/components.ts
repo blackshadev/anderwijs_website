@@ -6,6 +6,8 @@ import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
 
 export const Content = styled.div`
+    margin: 0 ${spacing.md};
+
     .hr {
         background: ${colors.green};
         height: 8px;
@@ -33,10 +35,10 @@ export const Content = styled.div`
     .span3 {
         flex: 1;
         min-width: 100%;
-        margin-left: 30px;
 
         ${fromSize.md`
             min-width: auto;
+            margin-left: 30px;
         `}
     }
 
