@@ -12,11 +12,11 @@ export const HeaderWrapper = styled.header`
 
 export const StyledImg = styled.img`
     object-fit: contain;
-    margin-right: ${spacing.md};
     width: 100%;
 
     ${fromSize.sm(css`
         width: 140px;
+        margin-right: ${spacing.md};
     `)}
 
     ${fromSize.md(
