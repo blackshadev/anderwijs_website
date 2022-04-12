@@ -45,7 +45,7 @@ jobs:
                   envkey_WORDPRESS_URL: ${{ secrets.WORDPRESS_URL }}
                   envkey_GRAPHQL_URL: ${{ secrets.GRAPHQL_URL }}
                   envkey_SITE_URL: ${{ secrets.SITE_URL }}
-                  envkey_AAS_URL: ${{ secrets.AAS_URL }}
+                  envkey_GATSBY_AAS_URL: ${{ secrets.GATSBY_AAS_URL }}
                   envkey_RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
                   file_name: .env.production
 

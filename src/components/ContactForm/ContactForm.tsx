@@ -26,7 +26,7 @@ const ContactForm: React.FunctionComponent = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.AAS_URL}/api/contact-form`,
+                `${process.env.GATSBY_AAS_URL}/api/contact-form`,
                 formData,
             );
 

@@ -18,7 +18,7 @@ const DonateForm: React.FC = () => {
 
         try {
             const response = await axios.post<{ url: string }>(
-                `${process.env.AAS_URL}/donate`,
+                `${process.env.GATSBY_AAS_URL}/donate`,
                 {
                     name: name,
                     amount: normalizeNumber(amount),

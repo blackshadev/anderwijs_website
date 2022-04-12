@@ -47,7 +47,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-custom-api',
             options: {
-                url: `${process.env.AAS_URL}/cal/part`,
+                url: `${process.env.GATSBY_AAS_URL}/cal/part`,
                 rootKey: 'aasUpcomingEvents',
                 schemas: {
                     aasUpcomingEvents: AasCalSchema,
@@ -57,7 +57,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-custom-api',
             options: {
-                url: `${process.env.AAS_URL}/cal/full`,
+                url: `${process.env.GATSBY_AAS_URL}/cal/full`,
                 rootKey: 'aasUpcomingEventsFull',
                 schemas: {
                     aasUpcomingEventsFull: AasCalSchema,

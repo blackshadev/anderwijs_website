@@ -21,7 +21,7 @@ const MainLayout: React.FunctionComponent<Props> = ({
     <React.Fragment>
         <GoogleReCaptchaProvider
             useRecaptchaNet
-            reCaptchaKey={process.env.RECAPTCHA_KEY}
+            reCaptchaKey={process.env.GATSBY_RECAPTCHA_KEY}
             scriptProps={{ async: true, defer: true, appendTo: 'body' }}
         >
             <GlobalStyle />
