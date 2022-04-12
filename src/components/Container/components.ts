@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import containerSizes from '../../styling/containerSizes';
 import { fromSize } from '../../styling/screenSizes';
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.main`
     width: ${containerSizes.xs};
     margin: 0 auto;
 

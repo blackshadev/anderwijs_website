@@ -6,6 +6,8 @@ import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
 
 export const Content = styled.div`
+    margin: 0 ${spacing.md};
+
     .hr {
         background: ${colors.green};
         height: 8px;
@@ -25,6 +27,15 @@ export const Content = styled.div`
         font-weight: 600;
     }
 
+    // Fix for bad html
+    h4,
+    h5,
+    h6 {
+        strong {
+            font-weight: normal;
+        }
+    }
+
     .row {
         display: flex;
         flex-wrap: wrap;
@@ -33,10 +44,10 @@ export const Content = styled.div`
     .span3 {
         flex: 1;
         min-width: 100%;
-        margin-left: 30px;
 
         ${fromSize.md`
             min-width: auto;
+            margin-left: 30px;
         `}
     }
 
