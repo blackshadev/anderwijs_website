@@ -4,6 +4,11 @@ import { fromSize } from '../../../../styling/screenSizes';
 import spacing from '../../../../styling/spacing';
 import Container from '../../../Container/Container';
 
+export const FooterFlagImg = styled.img`
+    vertical-align: middle;
+    margin-right: ${spacing.xs};
+`;
+
 export const FooterWrapper = styled.footer`
     margin-bottom: ${spacing.lg};
 `;
