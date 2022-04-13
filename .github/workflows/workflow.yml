@@ -46,7 +46,7 @@ jobs:
                   envkey_GRAPHQL_URL: ${{ secrets.GRAPHQL_URL }}
                   envkey_SITE_URL: ${{ secrets.SITE_URL }}
                   envkey_GATSBY_AAS_URL: ${{ secrets.GATSBY_AAS_URL }}
-                  envkey_RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
+                  envkey_GATSBY_RECAPTCHA_KEY: ${{ secrets.GATSBY_RECAPTCHA_KEY }}
                   file_name: .env.production
 
             - name: Build
