@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet';
 import SkipToContent from '../../../components/SkipToContent';
 import { SkipToContentContext } from '../../SkipToContent/SkipToContent';
 import GlobalStyle from '../GlobalStyle';
-import Content from './Content/Content';
+import { Main } from './components';
+import Content from './Content';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -29,7 +30,9 @@ const MainLayout: React.FunctionComponent<Props> = ({
             <SkipToContentContext.Provider value="main-content">
                 <SkipToContent />
                 <Header location={location} withBorder={withHeaderBorder} />
-                <Content>{children}</Content>
+                <Main>
+                    <Content>{children}</Content>
+                </Main>
                 <Footer />
             </SkipToContentContext.Provider>
         </GoogleReCaptchaProvider>

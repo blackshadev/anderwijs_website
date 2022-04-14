@@ -6,8 +6,6 @@ import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
 
 export const Content = styled.div`
-    margin: 0 ${spacing.md};
-
     .hr {
         background: ${colors.green};
         height: 8px;

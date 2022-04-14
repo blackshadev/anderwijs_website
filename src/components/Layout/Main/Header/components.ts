@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import spacing from '../../../../styling/spacing';
-import Container from '../../../Container';
 import React from 'react';
 import image from '../../../../images/header.gif';
-import withProps from '../../../../support/styling/withProps';
 import { fromSize } from '../../../../styling/screenSizes';
+import { ContainerCss } from '../../../Container/components';
 
 export const HeaderWrapper = styled.header`
+    ${ContainerCss}
     margin-bottom: ${spacing.md};
 `;
 
@@ -37,14 +37,12 @@ const withBackground = css`
     background: url(${image}) no-repeat 50% 100%;
 `;
 
-export const HeaderContainer = withProps<
-    React.PropsWithChildren<{ withBorder: boolean }>
->()(styled(Container))`
+export const HeaderContainer = styled.div<{ withBorder: boolean }>`
     display: flex;
     align-items: flex-end;
     padding-bottom: ${spacing.lg};
     flex-wrap: wrap;
-    
+
     ${(props: React.PropsWithChildren<{ withBorder: boolean }>) => {
         if (props.withBorder) {
             return withBackground;
