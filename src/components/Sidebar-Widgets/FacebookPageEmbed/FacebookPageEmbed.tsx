@@ -12,8 +12,8 @@ const FacebookPageEmbed: React.FunctionComponent<Props> = ({ page, title }) => {
         <iframe
             src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(
                 url,
-            )}&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
-            width="340"
+            )}&width=300&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
+            width="300"
             height="130"
             style={{ border: 'none', overflow: 'hidden' }}
             scrolling="no"
