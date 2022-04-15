@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import containerSizes from '../../styling/containerSizes';
 import { fromSize } from '../../styling/screenSizes';
 import spacing from '../../styling/spacing';
