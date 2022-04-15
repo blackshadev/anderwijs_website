@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 type Props = {
@@ -9,33 +9,20 @@ type Props = {
 const FacebookPageEmbed: React.FunctionComponent<Props> = ({ page, title }) => {
     const url = `https://www.facebook.com/${page}`;
     return (
-        <>
-            <Helmet>
-                <script
-                    async
-                    defer
-                    crossOrigin="anonymous"
-                    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
-                    nonce="xXG7hMr1"
-                ></script>
-            </Helmet>
-            <div id="fb-root"></div>
-            <div
-                className="fb-page"
-                data-href={url}
-                data-tabs=""
-                data-width=""
-                data-height=""
-                data-small-header="false"
-                data-adapt-container-width="true"
-                data-hide-cover="false"
-                data-show-facepile="false"
-            >
-                <blockquote cite={url} className="fb-xfbml-parse-ignore">
-                    <a href={url}>{title}</a>
-                </blockquote>
-            </div>
-        </>
+        <iframe
+            src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(
+                url,
+            )}&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
+            width="340"
+            height="130"
+            style={{ border: 'none', overflow: 'hidden' }}
+            scrolling="no"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        >
+            {title}
+        </iframe>
     );
 };
 
