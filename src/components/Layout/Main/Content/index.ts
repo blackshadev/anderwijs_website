@@ -1,1 +1,2 @@
-export { default } from './Content';
+import { Content } from './components';
+export default Content;
