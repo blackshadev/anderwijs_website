@@ -41,7 +41,7 @@ const GenericPage: React.FunctionComponent<React.PropsWithChildren<Props>> = ({
                     <Widget title="Anderwijs in beeld">
                         <YoutubeVideoEmbed
                             title="Anderwijs in beeld"
-                            videoId="wHu8itM2xTQ"
+                            videoId="FPHYY1nP7TQ"
                         />
                     </Widget>
 
