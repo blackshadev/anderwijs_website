@@ -1,0 +1,90 @@
+import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import React from 'react';
+
+import {
+    EventContainer,
+    EventData,
+    EventImage,
+    EventTitle,
+} from './components';
+import images from './images';
+
+export type UpcomingEvent = {
+    id: number;
+    code: string;
+    name: string;
+    startDate: string;
+    startTime: string;
+    endDate: string;
+    endTime: string;
+    locationName: string;
+    locationPlace: string;
+    locationAddress: string;
+    locationWebsite: string;
+    locationZipcode: string;
+    priceHtml: string;
+    description: string;
+    days: number;
+};
+
+export default function UpcomingEvent({
+    event,
+}: {
+    event: UpcomingEvent;
+}): React.ReactElement {
+    const image = images[event.id % images.length];
+
+    return (
+        <EventContainer>
+            <EventTitle>{event.name}</EventTitle>
+            <EventImage
+                src={image}
+                alt={`Een sfeer impressie van een kamp zoals ${event.name}`}
+            />
+            <EventData>
+                <tbody>
+                    <tr>
+                        <td>Datum</td>
+                        <td>
+                            {event.startDate} {event.startTime} t/m{' '}
+                            {event.endDate} {event.endTime} ({event.days} dagen)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Locatie</td>
+                        <td>
+                            {event.locationName} <br />
+                            {event.locationAddress} <br />
+                            {event.locationZipcode} {event.locationPlace} <br />
+                            {event.locationWebsite ? (
+                                <>
+                                    <br />
+                                    <a href={event.locationWebsite}>
+                                        Website kamphuis
+                                    </a>
+                                </>
+                            ) : null}
+                        </td>
+                    </tr>
+
+                    <tr
+                        dangerouslySetInnerHTML={{ __html: event.priceHtml }}
+                    ></tr>
+                    <tr>
+                        <td colSpan={2}>
+                            Voor meer informatie over de kortingsregeling,{' '}
+                            <Link to="/bijspijkerkampen/kosten">klik hier</Link>
+                            .
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colSpan={2}>{event.description}</td>
+                    </tr>
+                </tbody>
+            </EventData>
+        </EventContainer>
+    );
+}
