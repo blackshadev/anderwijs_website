@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
@@ -40,7 +39,7 @@ export default function UpcomingEvent({
             <EventTitle>{event.name}</EventTitle>
             <EventImage
                 src={image}
-                alt={`Een sfeer impressie van een kamp zoals ${event.name}`}
+                alt={`Een sfeerimpressie van een kamp zoals ${event.name}`}
             />
             <EventData>
                 <tbody>
@@ -74,9 +73,7 @@ export default function UpcomingEvent({
                     ></tr>
                     <tr>
                         <td colSpan={2}>
-                            Voor meer informatie over de kortingsregeling,{' '}
-                            <Link to="/bijspijkerkampen/kosten">klik hier</Link>
-                            .
+                            <Link to="/bijspijkerkampen/kosten">Meer informatie over de kortingsregeling.</Link>
                         </td>
                     </tr>
 

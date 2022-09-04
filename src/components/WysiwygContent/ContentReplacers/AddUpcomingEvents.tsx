@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { DOMNode } from 'html-react-parser';
 import UpcomingEvents from '../../UpcomingEvents';
 import { Replacer } from './Replacer';
 
