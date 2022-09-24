@@ -73,7 +73,7 @@ export default function UpcomingEvent({
                     ></tr>
                     <tr>
                         <td colSpan={2}>
-                            <Link to="/bijspijkerkampen/kosten">
+                            <Link to="/onze-bijleskampen/kosten">
                                 Meer informatie over de kortingsregeling.
                             </Link>
                         </td>
