@@ -36,7 +36,7 @@ export default function UpcomingEvent({
 
     return (
         <EventContainer>
-            <EventTitle>{event.name}</EventTitle>
+            <EventTitle id={event.code}>{event.name}</EventTitle>
             <EventImage
                 src={image}
                 alt={`Een sfeerimpressie van een kamp zoals ${event.name}`}
