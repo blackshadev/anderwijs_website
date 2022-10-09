@@ -1,8 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import UpcomingEvent, {
-    UpcomingEvent as UpcomingEventType,
-} from './UpcomingEvent';
+import UpcomingEvent, { UpcomingEventType } from './UpcomingEvent';
 
 const UPCOMING_EVENTS = graphql`
     query AllUpcomingEvents {
