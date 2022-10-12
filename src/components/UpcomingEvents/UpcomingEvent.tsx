@@ -9,7 +9,7 @@ import {
 } from './components';
 import images from './images';
 
-export type UpcomingEvent = {
+export type UpcomingEventType = {
     id: number;
     code: string;
     name: string;
@@ -30,7 +30,7 @@ export type UpcomingEvent = {
 export default function UpcomingEvent({
     event,
 }: {
-    event: UpcomingEvent;
+    event: UpcomingEventType;
 }): React.ReactElement {
     const image = images[event.id % images.length];
 
