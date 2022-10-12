@@ -42,7 +42,7 @@ export default function HomeUpcomingEventsPreview({ eventIndex }: Props) {
             </h5>
             <PreviewImage
                 src={images[eventIndex]}
-                alt={`Een sfeer van een kamp zoals ${event.name}`}
+                alt={`Sfeer van een kamp zoals ${event.name}`}
             />
         </UpcomingEventLink>
     );
