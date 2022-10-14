@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import images from '../UpcomingEvents/images';
+import images from './images';
 import { PreviewImage, UpcomingEventLink } from './components';
 
 type UpcomingEventsQueryResult = {

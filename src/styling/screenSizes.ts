@@ -17,12 +17,13 @@ export const fromSize: Media = Object.entries(breakpoints).reduce(
     (acc, [label, size]) => {
         return {
             ...acc,
-            [label]: (content: string) =>
-                css`
+            [label]: (content: ReturnType<typeof css>) => {
+                return css`
                     @media (min-width: ${size}) {
                         ${content}
                     }
-                `,
+                `;
+            },
         };
     },
     {},

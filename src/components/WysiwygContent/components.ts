@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from '../../styling/colors';
 import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';
@@ -123,14 +123,28 @@ export const Content = styled.div`
 
     .wp-block-columns {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        margin: ${spacing.lg};
+
+        ${fromSize.md`
+            flex-wrap: no-wrap;
+        `}
 
         .wp-block-column {
-            flex-basis: 0;
             flex-grow: 1;
+            width: 100%;
+
+            ${fromSize.md`
+                flex-basis: 0;
+                width: auto;
+            `}
 
             &:not(:first-child) {
-                margin-left: ${spacing.md};
+                margin-left: 0;
+
+                ${fromSize.md(css`
+                    margin-left: ${spacing.md};
+                `)}
             }
         }
     }
@@ -169,6 +183,22 @@ export const Content = styled.div`
 
         input {
             float: none !important;
+        }
+    }
+
+    .wp-block-embed {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: auto;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     }
 `;
