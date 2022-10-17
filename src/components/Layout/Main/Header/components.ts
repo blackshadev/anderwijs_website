@@ -17,18 +17,24 @@ export const StyledImg = styled.img`
     ${fromSize.sm(css`
         width: 140px;
         margin-right: ${spacing.md};
+        position: relative;
+        top: 5px;
     `)}
 
     ${fromSize.md(
         css`
             margin-right: ${spacing.xl};
             width: 220px;
+            position: relative;
+            top: 7px;
         `,
     )}
 
     ${fromSize.lg(
         css`
             width: 270px;
+            position: relative;
+            top: 8px;
         `,
     )}
 `;

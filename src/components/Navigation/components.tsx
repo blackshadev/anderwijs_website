@@ -46,6 +46,10 @@ export const NavigationDesktop = styled.ul`
             background-color: ${colors.green};
             padding: ${spacing.md} 0;
         }
+
+        & > a {
+            padding-bottom: 0;
+        }
     }
 
     ul {
@@ -55,7 +59,7 @@ export const NavigationDesktop = styled.ul`
     a {
         text-align: center;
         width: 100%;
-        padding: ${spacing.lg} 0 ${spacing.sm} 0;
+        padding: ${spacing.lg} 0 ${spacing.lg} 0;
         display: inline-block;
         text-decoration: none;
         color: ${colors.foreground};
