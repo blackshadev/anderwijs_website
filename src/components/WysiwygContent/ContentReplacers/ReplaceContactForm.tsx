@@ -9,7 +9,11 @@ export default class ReplaceContactForm implements ContentReplacer {
     }
 
     public supportsNode(node: DOMNode): boolean {
-        return node instanceof Element && node.tagName === 'form';
+        return (
+            node instanceof Element &&
+            node.tagName === 'span' &&
+            node.attribs['data-replacer'] === 'contact-form'
+        );
     }
 
     public getNode(node: DOMNode): ReactElement {
