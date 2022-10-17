@@ -59,16 +59,6 @@ const UpcomingEvents: React.FunctionComponent = () => {
             <Link to="/onze-bijleskampen/kampagenda/">
                 Volledige kampagenda
             </Link>
-            <UpcomingEventsExternalLink>
-                Onze kampen zijn ook te vinden op{' '}
-                <a
-                    href="https://zomerkampen.net"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    Zomerkampen.net
-                </a>
-            </UpcomingEventsExternalLink>
         </>
     );
 };
