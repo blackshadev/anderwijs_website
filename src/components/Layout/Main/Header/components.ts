@@ -26,7 +26,7 @@ export const StyledImg = styled.img`
             margin-right: ${spacing.xl};
             width: 220px;
             position: relative;
-            top: 7px;
+            top: 8px;
         `,
     )}
 
@@ -34,7 +34,7 @@ export const StyledImg = styled.img`
         css`
             width: 270px;
             position: relative;
-            top: 8px;
+            top: 9px;
         `,
     )}
 `;
