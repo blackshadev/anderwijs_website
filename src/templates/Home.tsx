@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import WysiwygContent from '../components/WysiwygContent/WysiwygContent';
 import MainLayout from '../components/Layout/Main/MainLayout';
 import HomeHeader from '../components/HomeHeader/HomeHeader';
-import image1 from '../images/home-header/bijles-1a.jpg';
-import image2 from '../images/home-header/bijles-4a.jpg';
 import YoastSeo from '../components/Seo';
 
 type PageData = {
@@ -28,21 +26,10 @@ const Home: React.FunctionComponent<Props> = ({
     path,
     location,
 }) => {
-    const images = [image1, image2].map((path) => {
-        return (
-            <img
-                key={path}
-                src={path}
-                alt="Een blik bij ons op kamp"
-                aria-hidden={true}
-            />
-        );
-    });
-
     return (
         <MainLayout location={location} withHeaderBorder={false}>
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
-            <HomeHeader images={images} />
+            <HomeHeader />
             <WysiwygContent content={page.content} location={location} />
         </MainLayout>
     );
