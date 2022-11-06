@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import useInterval from '../../hooks/useInterval';
 import { HomeHeaderContainer } from './components';
 import allImages from './images';
@@ -8,16 +8,14 @@ const INTERVAL = 5_000;
 export default function HomeHeader() {
     const [images, setImages] = useState<string[]>([]);
 
-    useEffect(
-        () =>
-            setImages(
-                allImages
-                    .map((value) => ({ value, sort: Math.random() }))
-                    .sort((a, b) => a.sort - b.sort)
-                    .map(({ value }) => value),
-            ),
-        [],
-    );
+    useLayoutEffect(() => {
+        setImages(
+            allImages
+                .map((value) => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value),
+        );
+    }, []);
     const [imageIndex, setImageIndex] = useState<number>(0);
 
     useInterval(() => {
