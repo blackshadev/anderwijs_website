@@ -7,5 +7,6 @@ export const HomeHeaderContainer = styled.div`
     img {
         width: 100%;
         aspect-ratio: 3 / 1;
+        display: block;
     }
 `;
