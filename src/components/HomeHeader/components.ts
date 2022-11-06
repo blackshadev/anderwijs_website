@@ -6,5 +6,6 @@ export const HomeHeaderContainer = styled.div`
     margin-bottom: ${spacing.lg};
     img {
         width: 100%;
+        aspect-ratio: 3 / 1;
     }
 `;
