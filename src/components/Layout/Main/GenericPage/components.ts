@@ -8,7 +8,7 @@ export const SplitPanel = styled.div`
 
     & > div,
     & > section {
-        flex: 1;
+        flex: 1 1 0%;
         min-width: 100%;
 
         ${fromSize.sm(css`
@@ -20,7 +20,7 @@ export const SplitPanel = styled.div`
         `)}
 
         &:last-child {
-            flex: 0;
+            flex: 0 1 0%;
             margin: 0;
         }
     }

@@ -1,4 +1,4 @@
-import { DOMNode } from 'html-react-parser';
+import { Element } from 'html-react-parser';
 import { ReactElement } from 'react';
 import { Replacer } from './Replacer';
 
@@ -11,7 +11,7 @@ export class ContentReplacerCollection {
 
     private constructor(private items: Replacer[]) {}
 
-    public replace(node: DOMNode): false | ReactElement {
+    public replace(node: Element): false | ReactElement {
         for (const item of this.items) {
             if (item.supportsNode(node)) {
                 return item.getNode(node);
