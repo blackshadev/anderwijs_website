@@ -79,4 +79,27 @@ export default createGlobalStyle`
             text-decoration: underline;
         }
     }
+
+    img.inline-gatsby-image-wrapper {
+        width: 100%;
+    }
+    
+    .aligncenter {
+        float: none;
+        margin: 0 auto;
+    }
+
+    figure.wp-block-image {
+        display: table;
+    }
+
+    figcaption {
+        display: table-caption;
+        caption-side: bottom;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #555;
+        font-size: 13px;
+    } 
 `;
