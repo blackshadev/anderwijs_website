@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { DOMNode, Element } from 'html-react-parser';
+import { Element } from 'html-react-parser';
 import { Replacer as ContentReplacer } from './Replacer';
 import ContactForm from '../../ContactForm';
 
@@ -8,15 +8,15 @@ export default class ReplaceContactForm implements ContentReplacer {
         return location.pathname === '/contact/contactgegevens/';
     }
 
-    public supportsNode(node: DOMNode): boolean {
+    public supportsNode(node: Element): boolean {
         return (
-            node instanceof Element &&
-            node.tagName === 'span' &&
+            node.type === 'tag' &&
+            node.name === 'span' &&
             node.attribs['data-replacer'] === 'contact-form'
         );
     }
 
-    public getNode(node: DOMNode): ReactElement {
+    public getNode(): ReactElement {
         return <ContactForm />;
     }
 }

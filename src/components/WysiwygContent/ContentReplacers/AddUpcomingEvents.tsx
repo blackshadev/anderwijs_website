@@ -1,4 +1,4 @@
-import { DOMNode, Element } from 'html-react-parser';
+import { Element } from 'html-react-parser';
 import React, { ReactElement } from 'react';
 import UpcomingEvents from '../../UpcomingEvents';
 import { Replacer } from './Replacer';
@@ -8,11 +8,11 @@ export default class AddUpcomingEvents implements Replacer {
         return location.pathname === '/onze-bijleskampen/kampagenda/';
     }
 
-    public supportsNode(node: DOMNode): boolean {
+    public supportsNode(node: Element): boolean {
         return (
-            node instanceof Element &&
-            node.tagName === 'span' &&
-            node.attribs['data-replacer'] === 'upcoming-events'
+            node.type === 'tag' &&
+            node.name === 'span' &&
+            node.attribs?.['data-replacer'] === 'upcoming-events'
         );
     }
 

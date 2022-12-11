@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { DOMNode, Element } from 'html-react-parser';
+import { Element } from 'html-react-parser';
 import { ReactElement } from 'react';
 import { Replacer } from './Replacer';
 import HomeUpcomingEventsPreview from '../../HomeUpcomingEventsPreview';
@@ -10,19 +10,16 @@ export default class AddUpcomingEventTile implements Replacer {
         return location.pathname === '/';
     }
 
-    public supportsNode(node: DOMNode): boolean {
+    public supportsNode(node: Element): boolean {
         return (
-            node instanceof Element &&
-            node.tagName === 'span' &&
-            node.attribs['data-replacer'] === 'upcoming-event-tile'
+            node.type === 'tag' &&
+            node.name === 'span' &&
+            node.attribs?.['data-replacer'] === 'upcoming-event-tile'
         );
     }
 
-    public getNode(node: DOMNode): ReactElement {
-        if (!(node instanceof Element)) {
-            return <></>;
-        }
-
+    public getNode(node: Element): ReactElement {
+        console.log('here');
         const eventIndex = parseInt(node.attribs['data-replacer-event']);
         return <HomeUpcomingEventsPreview eventIndex={eventIndex} />;
     }
