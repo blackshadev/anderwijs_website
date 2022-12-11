@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { UpcomingEventsExternalLink, UpcomingEventsList } from './components';
+import { UpcomingEventsList } from './components';
 
 const UPCOMING_EVENTS = graphql`
     query UpcomingEvents {

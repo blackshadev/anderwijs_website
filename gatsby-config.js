@@ -24,6 +24,18 @@ const AasCalSchema = `
     prijs: String
     beschrijving: String
     kleur: String
+    prijzen: [priceGroup]
+`;
+
+const PriceGroupSchema = `
+    type: String
+    prijzen: [price]
+`;
+
+const PriceSchema = `
+    omschrijving: String
+    prijs: Int
+    korting: String
 `;
 
 require('dotenv').config({
@@ -51,6 +63,9 @@ module.exports = {
                 rootKey: 'aasUpcomingEvents',
                 schemas: {
                     aasUpcomingEvents: AasCalSchema,
+                    priceGroup: PriceGroupSchema,
+                    price: PriceSchema,
+
                 },
             },
         },
@@ -61,6 +76,8 @@ module.exports = {
                 rootKey: 'aasUpcomingEventsFull',
                 schemas: {
                     aasUpcomingEventsFull: AasCalSchema,
+                    priceGroup: PriceGroupSchema,
+                    price: PriceSchema,
                 },
             },
         },

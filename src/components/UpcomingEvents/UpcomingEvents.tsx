@@ -22,6 +22,14 @@ const UPCOMING_EVENTS = graphql`
                     priceHtml: prijs
                     description: beschrijving
                     days: aantal_dagen
+                    prijzen {
+                        type
+                        prijzen {
+                            omschrijving
+                            prijs
+                            korting
+                        }
+                    }
                 }
             }
         }
