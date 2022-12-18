@@ -6,8 +6,14 @@ import {
     EventData,
     EventImage,
     EventTitle,
+    PriceList,
 } from './components';
 import images from './images';
+
+type PriceTypes =
+    | 'Standaard prijs'
+    | 'Inkomen afhankelijke korting'
+    | 'Vroegboek korting';
 
 export type UpcomingEventType = {
     id: number;
@@ -25,6 +31,14 @@ export type UpcomingEventType = {
     priceHtml: string;
     description: string;
     days: number;
+    prijzen: {
+        type: PriceTypes;
+        prijzen: {
+            korting: string;
+            omschrijving: string;
+            prijs: number;
+        }[];
+    }[];
 };
 
 export default function UpcomingEvent({
@@ -68,13 +82,40 @@ export default function UpcomingEvent({
                         </td>
                     </tr>
 
-                    <tr
-                        dangerouslySetInnerHTML={{ __html: event.priceHtml }}
-                    ></tr>
                     <tr>
-                        <td colSpan={2}>
+                        <td>Prijs</td>
+                        <td>
+                            {event.prijzen
+                                .filter((p) => p)
+                                .map(({ type, prijzen }) => (
+                                    <PriceList key={type}>
+                                        <p>{type}</p>
+                                        <dl key={type}>
+                                            {prijzen
+                                                .filter((p) => p)
+                                                .map(
+                                                    ({
+                                                        omschrijving,
+                                                        prijs,
+                                                    }) => (
+                                                        <React.Fragment
+                                                            key={omschrijving}
+                                                        >
+                                                            <dt>
+                                                                {omschrijving}
+                                                            </dt>
+                                                            <dd>
+                                                                &euro; {prijs}
+                                                            </dd>
+                                                        </React.Fragment>
+                                                    ),
+                                                )}
+                                        </dl>
+                                    </PriceList>
+                                ))}
                             <Link to="/onze-bijleskampen/kosten">
-                                Meer informatie over de kortingsregeling.
+                                Leer hier meer informatie over onze
+                                kortingsregelingen.
                             </Link>
                         </td>
                     </tr>
