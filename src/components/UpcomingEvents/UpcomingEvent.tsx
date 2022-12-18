@@ -113,12 +113,9 @@ export default function UpcomingEvent({
                                         </dl>
                                     </PriceList>
                                 ))}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colSpan={2}>
                             <Link to="/onze-bijleskampen/kosten">
-                                Meer informatie over de kortingsregeling.
+                                Leer hier meer informatie over onze
+                                kortingsregelingen.
                             </Link>
                         </td>
                     </tr>
