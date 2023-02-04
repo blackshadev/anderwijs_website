@@ -54,9 +54,11 @@ function getTemplatePath(page) {
 }
 
 async function createEventPages(graphql, createPage) {
+    // We use the partial calendar (instead of 'Full') 
+    // because only camps and online events need to be found on Google (with structured data)
     const graphQlResult = await graphql(`
         query {
-            allAasUpcomingEventsFull {
+            allAasUpcomingEvents {
                 nodes {
                     id
                     code
@@ -70,7 +72,7 @@ async function createEventPages(graphql, createPage) {
 
     const {
         data: {
-            allAasUpcomingEventsFull: { nodes: allEvents },
+            allAasUpcomingEvents: { nodes: allEvents },
         },
     } = graphQlResult;
 

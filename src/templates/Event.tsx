@@ -7,8 +7,10 @@ import YoastSeo from '../components/Seo/YoastSeo';
 type Props = {
     data: {
         event: {
-            code: string;
             naam: string;
+            code: string;
+            beschrijving: string;
+            structured_data: string;
         };
     };
     path: string;
@@ -16,7 +18,7 @@ type Props = {
 const Event: React.FunctionComponent<Props> = ({
     path,
     data: {
-        event: { code, naam },
+        event: { code, naam, beschrijving, structured_data },
     },
 }) => {
     return (
@@ -25,6 +27,8 @@ const Event: React.FunctionComponent<Props> = ({
             <h1>
                 {naam} ({code})
             </h1>
+            <p>{beschrijving}</p>
+            <p>{structured_data}</p>
         </MainLayout>
     );
 };
@@ -33,9 +37,11 @@ export default Event;
 
 export const query = graphql`
     query ($id: String!) {
-        event: aasUpcomingEventsFull(id: { eq: $id }) {
+        event: aasUpcomingEvents(id: { eq: $id }) {
             naam
             code
+            beschrijving
+            structured_data
         }
     }
 `;

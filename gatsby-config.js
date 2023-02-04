@@ -23,8 +23,8 @@ const AasCalSchema = `
     kamphuis_mapslink: String
     prijs: String
     beschrijving: String
-    kleur: String
     prijzen: [priceGroup]
+    structured_data: String
 `;
 
 const PriceGroupSchema = `
