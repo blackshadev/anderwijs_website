@@ -30,6 +30,7 @@ const UPCOMING_EVENTS = graphql`
                             korting
                         }
                     }
+                    structured_data
                 }
             }
         }

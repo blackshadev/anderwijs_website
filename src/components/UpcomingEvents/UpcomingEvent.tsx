@@ -39,6 +39,7 @@ export type UpcomingEventType = {
             prijs: number;
         }[];
     }[];
+    structured_data: string;
 };
 
 export default function UpcomingEvent({

@@ -3,32 +3,27 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import MainLayout from '../components/Layout/Main/MainLayout';
 import YoastSeo from '../components/Seo/YoastSeo';
+import UpcomingEvent, { UpcomingEventType } from '../components/UpcomingEvents/UpcomingEvent';
 
 type Props = {
     data: {
-        event: {
-            naam: string;
-            code: string;
-            beschrijving: string;
-            structured_data: string;
-        };
+        event: UpcomingEventType;
     };
     path: string;
 };
 const Event: React.FunctionComponent<Props> = ({
     path,
     data: {
-        event: { code, naam, beschrijving, structured_data },
+        event,
     },
 }) => {
     return (
-        <MainLayout location={location} withHeaderBorder={false}>
+        <MainLayout location={location} withHeaderBorder={false}>  
             <YoastSeo lang="nl" path={path} html="" />
-            <h1>
-                {naam} ({code})
-            </h1>
-            <p>{beschrijving}</p>
-            <p>{structured_data}</p>
+            <Helmet>
+                <script type="application/ld+json">{event.structured_data}</script>
+            </Helmet>
+            <UpcomingEvent key={event.id} event={event} />
         </MainLayout>
     );
 };
@@ -38,9 +33,29 @@ export default Event;
 export const query = graphql`
     query ($id: String!) {
         event: aasUpcomingEvents(id: { eq: $id }) {
-            naam
+            id: id__normalized
             code
-            beschrijving
+            name: naam
+            startDate: datum_start
+            startTime: tijd_start
+            endDate: datum_eind
+            endTime: tijd_eind
+            locationName: kamphuis_naam
+            locationPlace: kamphuis_plaats
+            locationAddress: kamphuis_adres
+            locationWebsite: kamphuis_website
+            locationZipcode: kamphuis_postcode
+            priceHtml: prijs
+            description: beschrijving
+            days: aantal_dagen
+            prijzen {
+                type
+                prijzen {
+                    omschrijving
+                    prijs
+                    korting
+                }
+            }
             structured_data
         }
     }
