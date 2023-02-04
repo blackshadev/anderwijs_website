@@ -52,9 +52,7 @@ export default function UpcomingEvent({
     return (
         <EventContainer>
             <EventTitle id={event.code}>
-                <Link to={`/events/${event.code}`}>
-                    {event.name}
-                </Link>
+                <Link to={`/events/${event.code}`}>{event.name}</Link>
             </EventTitle>
             <EventImage
                 src={image}
