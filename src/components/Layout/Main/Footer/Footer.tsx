@@ -6,9 +6,11 @@ import ukFlag from '../../../../images/uk-flag.png';
 import { Link } from 'gatsby';
 
 const FooterText: React.FunctionComponent = () => {
+    const date = new Date();
+
     return (
         <div>
-            © 2021 Vereniging Anderwijs. KvK: 40480422. Contact:
+            © {date.getFullYear()} Vereniging Anderwijs. KvK: 40480422. Contact:
             <a href="mailto:info@anderwijs.nl"> info@anderwijs.nl</a>.<br />
             <FooterFlagImg src={ukFlag} alt="UK flag icon"></FooterFlagImg>
             Looking for information in English?{' '}
