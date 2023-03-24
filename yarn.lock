@@ -6473,9 +6473,9 @@ html-entities@^2.1.0, html-entities@^2.3.3:
   integrity sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==
 
 html-react-parser@^3.0.4:
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.13.tgz#1dff14fb894ac5a3a23e31922ecc02163504e529"
-  integrity sha512-Z8amThJdrAhuqG/29GAyh2obOETWdC6zFWS/+jnk3lTX7QO2AVEicf+LcfuJwaAOK+YIJ46u96QaWSwmEO64Tw==
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.14.tgz#1e40633eb28fdc5a0eef32638d341b88ffd11e9f"
+  integrity sha512-e0b9UF8MD2ysx0hgNq+amdte36LjzzlkmNFfHwQLPL/6nZdPHYtUH1a0RqJIeqa/Rk/MZpLuL/jhdPSE3VU+4A==
   dependencies:
     domhandler "5.0.3"
     html-dom-parser "3.1.6"
