@@ -27,34 +27,34 @@ const Page: React.FunctionComponent<Props> = ({
 export default Page;
 
 export const query = graphql`
-    fragment PageRecursive on WpPage {
-        parent: wpParent {
-            node {
-                ... on WpPage {
-                    ...PageFields
-                    parent: wpParent {
-                        node {
-                            ... on WpPage {
-                                ...PageFields
-                                parent: wpParent {
-                                    node {
-                                        ... on WpPage {
-                                            ...PageFields
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    #fragment PageRecursive on WpPage {
+    #    parent: wpParent {
+    #        node {
+    #            ... on WpPage {
+    #                ...PageFields
+    #                parent: wpParent {
+    #                    node {
+    #                        ... on WpPage {
+    #                            ...PageFields
+    #                            parent: wpParent {
+    #                                node {
+    #                                    ... on WpPage {
+    #                                        ...PageFields
+    #                                    }
+    #                                }
+    #                            }
+    #                        }
+    #                    }
+    #                }
+    #            }
+    #        }
+    #    }
+    #}
 
-    fragment PageFields on WpPage {
-        uri
-        title
-    }
+    #fragment PageFields on WpPage {
+    #    uri
+    #    title
+    #}
 
     query ($id: String!) {
         page: wpPage(id: { eq: $id }) {
@@ -65,7 +65,7 @@ export const query = graphql`
             seo {
                 fullHead
             }
-            ...PageRecursive
+            #...PageRecursive
         }
     }
 `;
