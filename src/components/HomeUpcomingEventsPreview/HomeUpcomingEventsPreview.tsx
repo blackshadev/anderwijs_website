@@ -32,6 +32,10 @@ export default function HomeUpcomingEventsPreview({ eventIndex }: Props) {
 
     const event = events[eventIndex];
 
+    if (!event) {
+        return null;
+    }
+
     return (
         <UpcomingEventLink
             href={`/onze-bijleskampen/kampagenda/#${event.code}`}
