@@ -5753,9 +5753,9 @@ gatsby-source-filesystem@^5.10.0, gatsby-source-filesystem@^5.2.0:
     xstate "^4.37.2"
 
 gatsby-source-wordpress@^7.2.2:
-  version "7.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-7.10.0.tgz#71eb5521bb6276d7069ffd563d5838a7e0f6bf44"
-  integrity sha512-NIlEZrvIIBeksMiUtZgR7duQ6sg39wY5vd/lmWUM4ql5UUjjWFofDVYZS3Q1TYr7GkTu7Ps6E9aSYAdD23KC2Q==
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-7.10.1.tgz#c7fa633b88987d0137caf83e7a60984dcd0fadd2"
+  integrity sha512-oqss1nTytOnaTXrpal+ElcctYKljKjmjLg2KbpVkVscvs2bke12RKxmo8xMiXFDlENWzbMgX+CEaODRALWEn9w==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@rematch/core" "^1.4.0"
