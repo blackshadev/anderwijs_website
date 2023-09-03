@@ -48,6 +48,7 @@ module.exports = {
         title: 'Anderwijs',
     },
     plugins: [
+        'gatsby-plugin-netlify',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-styled-components',
         {
