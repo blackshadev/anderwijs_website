@@ -51,7 +51,7 @@
         "eslint": "^8.3.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "^2.25.3",
-        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-react": "^7.27.1",
         "gatsby-plugin-netlify": "^5.1.0",
         "prettier": "^3.0.0",
