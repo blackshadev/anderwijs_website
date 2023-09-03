@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css, styled } from 'styled-components';
 import colors from '../../styling/colors';
 import fonts from '../../styling/fonts';
 import fontSizes from '../../styling/fontSizes';
@@ -9,11 +9,9 @@ import { notSrOnly, srOnly } from '../../styling/sr';
 export const NavigationDesktop = styled.ul`
     display: none;
 
-    ${fromSize.sm(
-        css`
-            display: flex;
-        `,
-    )}
+    ${fromSize.sm(css`
+        display: flex;
+    `)}
 
     & > li > a {
         border-top: 6px solid transparent;
@@ -110,20 +108,16 @@ export const NavigationDesktop = styled.ul`
 export const NavigationMobile = styled.select`
     width: 100%;
 
-    ${fromSize.sm(
-        css`
-            display: none;
-        `,
-    )}
+    ${fromSize.sm(css`
+        display: none;
+    `)}
 `;
 
 export const NavContainer = styled.nav`
     width: 100%;
 
-    ${fromSize.sm(
-        css`
-            width: auto;
-            flex-grow: 1;
-        `,
-    )}
+    ${fromSize.sm(css`
+        width: auto;
+        flex-grow: 1;
+    `)}
 `;

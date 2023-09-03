@@ -10,7 +10,8 @@ const FooterText: React.FunctionComponent = () => {
 
     return (
         <div>
-            © {date.getFullYear()} Vereniging Anderwijs. KvK: 40480422. Contact:
+            © {date.getFullYear()} Vereniging Anderwijs. KvK: 40480422.
+            Contact:
             <a href="mailto:info@anderwijs.nl"> info@anderwijs.nl</a>.<br />
             <FooterFlagImg src={ukFlag} alt="UK flag icon"></FooterFlagImg>
             Looking for information in English?{' '}
