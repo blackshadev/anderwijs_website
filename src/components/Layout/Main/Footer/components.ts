@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import image from '../../../../images/header.gif';
 import { fromSize } from '../../../../styling/screenSizes';
 import spacing from '../../../../styling/spacing';
@@ -31,10 +31,8 @@ export const FooterContainer = styled.div`
         min-width: 100%;
         margin-bottom: ${spacing.md};
 
-        ${fromSize.sm(
-            css`
-                min-width: auto;
-            `,
-        )}
+        ${fromSize.sm(css`
+            min-width: auto;
+        `)}
     }
 `;

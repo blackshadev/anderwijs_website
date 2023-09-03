@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { RuleSet, css } from 'styled-components';
 
 export const breakpoints = {
     sm: '768px',
@@ -10,7 +10,9 @@ export default breakpoints;
 type BreakpointKeys = keyof typeof breakpoints;
 
 type Media = {
-    [key in BreakpointKeys]: (cssString: ReturnType<typeof css>) => string;
+    [key in BreakpointKeys]: (
+        cssString: TemplateStringsArray | RuleSet<object>,
+    ) => ReturnType<typeof css>;
 };
 
 export const fromSize: Media = Object.entries(breakpoints).reduce(

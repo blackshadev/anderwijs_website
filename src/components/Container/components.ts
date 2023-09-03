@@ -7,31 +7,23 @@ export const ContainerCss = css`
     width: ${containerSizes.xs};
     margin: 0 auto;
 
-    ${fromSize.sm(
-        css`
-            width: ${containerSizes.sm};
-        `,
-    )}
+    ${fromSize.sm(css`
+        width: ${containerSizes.sm};
+    `)}
 
-    ${fromSize.md(
-        css`
-            width: ${containerSizes.md};
-        `,
-    )}
+    ${fromSize.md(css`
+        width: ${containerSizes.md};
+    `)}
 
-    ${fromSize.lg(
-        css`
-            width: ${containerSizes.lg};
-        `,
-    )}
+    ${fromSize.lg(css`
+        width: ${containerSizes.lg};
+    `)}
 `;
 
 export const ContainerContentCss = css`
     margin: 0 ${spacing.sm};
 
-    ${fromSize.md(
-        css`
-            margin: 0;
-        `,
-    )};
+    ${fromSize.md(css`
+        margin: 0;
+    `)};
 `;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import spacing from '../../../../styling/spacing';
 import React from 'react';
 import image from '../../../../images/header.gif';
@@ -21,22 +21,18 @@ export const StyledImg = styled.img`
         top: 5px;
     `)}
 
-    ${fromSize.md(
-        css`
-            margin-right: ${spacing.xl};
-            width: 220px;
-            position: relative;
-            top: 8px;
-        `,
-    )}
+    ${fromSize.md(css`
+        margin-right: ${spacing.xl};
+        width: 220px;
+        position: relative;
+        top: 8px;
+    `)}
 
-    ${fromSize.lg(
-        css`
-            width: 270px;
-            position: relative;
-            top: 9px;
-        `,
-    )}
+    ${fromSize.lg(css`
+        width: 270px;
+        position: relative;
+        top: 9px;
+    `)}
 `;
 
 const withBackground = css`
