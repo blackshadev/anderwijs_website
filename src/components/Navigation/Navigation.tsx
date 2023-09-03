@@ -12,7 +12,7 @@ import MenuOption from './MenuOption';
 
 const MENU_QUERY = graphql`
     query MainMenuQuery {
-        wpMenu(locations: { eq: GATSBY_HEADER_MENU }) {
+        wpMenu {
             menuItems {
                 nodes {
                     id
