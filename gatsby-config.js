@@ -41,12 +41,17 @@ const PriceSchema = `
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 });
+const adapter = require("gatsby-adapter-netlify")
+
 
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITE_URL,
         title: 'Anderwijs',
     },
+    adapter: adapter({
+        excludeDatastoreFromEngineFunction: false,
+    }),    
     plugins: [
         'gatsby-plugin-netlify',
         'gatsby-plugin-react-helmet',

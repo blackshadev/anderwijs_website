@@ -19,7 +19,6 @@ export default class AddUpcomingEventTile implements Replacer {
     }
 
     public getNode(node: Element): ReactElement {
-        console.log('here');
         const eventIndex = parseInt(node.attribs['data-replacer-event']);
         return <HomeUpcomingEventsPreview eventIndex={eventIndex} />;
     }
