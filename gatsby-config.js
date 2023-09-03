@@ -43,13 +43,12 @@ require('dotenv').config({
 });
 const adapter = require("gatsby-adapter-netlify")
 
-
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITE_URL,
         title: 'Anderwijs',
     },
-    adapter: adapter({
+    adapter: adapter.default({
         excludeDatastoreFromEngineFunction: false,
     }),    
     plugins: [
