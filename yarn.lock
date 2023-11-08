@@ -2533,9 +2533,9 @@
     csstype "^3.0.2"
 
 "@types/stylis@^4.0.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@types/stylis/-/stylis-4.2.2.tgz#baabb6b3aa6787e90a6bd6cd75cd8fb9a4f256a3"
-  integrity sha512-Rm17MsTpQQP5Jq4BF7CdrxJsDufoiL/q5IbJZYZmOZAJALyijgF7BzLgobXUqraNcQdqFYLYGeglDp6QzaxPpg==
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@types/stylis/-/stylis-4.2.3.tgz#0dff504fc23487a02a29209b162249070e83a0da"
+  integrity sha512-86XLCVEmWagiUEbr2AjSbeY4qHN9jMm3pgM3PuBYfLIbT0MpDSnA3GA/4W7KoH/C/eeK77kNaeIxZzjhKYIBgw==
 
 "@types/tmp@^0.0.33":
   version "0.0.33"
@@ -8915,9 +8915,9 @@ mute-stream@0.0.8, mute-stream@~0.0.4:
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
 nanoid@^3.3.6:
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
-  integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
+  integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"
@@ -11468,9 +11468,9 @@ style-to-object@^0.4.1:
     inline-style-parser "0.1.1"
 
 styled-components@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.0.tgz#228e3ab9c1ee1daa4b0a06aae30df0ed14fda274"
-  integrity sha512-VWNfYYBuXzuLS/QYEeoPgMErP26WL+dX9//rEh80B2mmlS1yRxRxuL5eax4m6ybYEUoHWlTy2XOU32767mlMkg==
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.1.tgz#a5414ada07fb1c17b96a26a05369daa4e2ad55e5"
+  integrity sha512-cpZZP5RrKRIClBW5Eby4JM1wElLVP4NQrJbJ0h10TidTyJf4SIIwa3zLXOoPb4gJi8MsJ8mjq5mu2IrEhZIAcQ==
   dependencies:
     "@emotion/is-prop-valid" "^1.2.1"
     "@emotion/unitless" "^0.8.0"
