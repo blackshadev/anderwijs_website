@@ -2484,16 +2484,16 @@
     "@types/react" "*"
 
 "@types/react-helmet@^6.1.4":
-  version "6.1.9"
-  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-6.1.9.tgz#e79e0def2ad4047cb67e83c5be7cfb3d2121615a"
-  integrity sha512-nuOeTefP4yPTWHvjGksCBKb/4hsgJxSX7aSTjTIDFXJIkZ6Wo2Y4/cmE1FO9OlYBrHjKOer/0zLwY7s4qiQBtw==
+  version "6.1.10"
+  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-6.1.10.tgz#60b6fc3a8a78ececc6d652789fdf54c562d76763"
+  integrity sha512-1qViSUxZ2ecsN107eQ16EccqJRfKtmf5Skh2Iv9BM8dEmp58czjBxvObRI6TZvdpZx+i42htAVVx1uLECovRBQ==
   dependencies:
     "@types/react" "*"
 
 "@types/react@*":
-  version "18.2.41"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.41.tgz#9eea044246bdb10510df89ef7f8422a8b6ad8fb9"
-  integrity sha512-CwOGr/PiLiNBxEBqpJ7fO3kocP/2SSuC9fpH5K7tusrg4xPSRT/193rzolYwQnTN02We/ATXKnb6GqA5w4fRxw==
+  version "18.2.42"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.42.tgz#6f6b11a904f6d96dda3c2920328a97011a00aba7"
+  integrity sha512-c1zEr96MjakLYus/wPnuWDo1/zErfdU9rNsIGmE+NV71nx88FG9Ttgo5dqorXTu/LImX2f63WBP986gJkMPNbA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
