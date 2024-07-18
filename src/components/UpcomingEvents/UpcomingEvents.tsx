@@ -7,7 +7,7 @@ const UPCOMING_EVENTS = graphql`
         allAasUpcomingEvents {
             edges {
                 node {
-                    id: id__normalized
+                    id
                     code
                     name: naam
                     startDate: datum_start

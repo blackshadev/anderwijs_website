@@ -46,7 +46,7 @@ export default Event;
 export const query = graphql`
     query ($id: String!) {
         event: aasUpcomingEvents(id: { eq: $id }) {
-            id: id__normalized
+            id
             code
             name: naam
             startDate: datum_start
