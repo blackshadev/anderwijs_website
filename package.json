@@ -34,7 +34,7 @@
         "gatsby-source-filesystem": "^5.2.0",
         "gatsby-source-wordpress": "^7.2.2",
         "gatsby-transformer-sharp": "^5.2.0",
-        "html-react-parser": "^4.0.0",
+        "html-react-parser": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-google-recaptcha-v3": "^1.10.0",
