@@ -29,10 +29,7 @@ const Home: React.FunctionComponent<Props> = ({
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             {/* <HomeHeader /> */}
             <h1>Helaas! Anderwijs is niet meer...</h1>
-            <p>
-                Waarschijnlijk had je verwacht hier op de website van vereniging
-                Anderwijs terecht te komen, maar dat is helaas niet zo.
-            </p>
+            <p>Je bent op onze website, maar dat is het dan ook.</p>
 
             <p>
                 Op 30 juni 2024 hebben we namelijk tijdens een algemene
@@ -68,7 +65,7 @@ const Home: React.FunctionComponent<Props> = ({
                 jaren hebben ingezet voor Anderwijs, zij het praktisch,
                 financieel of door naamsbekendheid. Zonder jullie hadden we
                 nooit zoveel moois kunnen doen. Onze financiële nalatenschap
-                gaat naar de stichting
+                gaat naar de stichting{' '}
                 <a href="https://www.schoolscool.nl">
                     School&apos;s cool Nederland
                 </a>
@@ -79,12 +76,12 @@ const Home: React.FunctionComponent<Props> = ({
 
             <p>
                 Ben je leiding of (ouder/verzorger van een) deelnemer die mee op
-                kamp is geweest? Dan kun je nog op ons
-                <a href="https://aas2.anderwijs.nl">administratieysteem</a>
-                inloggen om je gegevens in te zien. Ook de afgeschermde
+                kamp is geweest? Dan kun je nog op ons{' '}
+                <a href="https://aas2.anderwijs.nl">administratieysteem</a>{' '}
+                inloggen om je gegevens in te zien. Ook de afgeschermde{' '}
                 <a href="https://cloud.anderwijs.nl">cloud</a> met foto&apos;s
                 is nog online. Voor al het overige je contact opnemen met het
-                bestuur op
+                bestuur op{' '}
                 <a href="mailto:bestuur@anderwijs.nl">bestuur@anderwijs.nl</a>.
             </p>
 
