@@ -28,8 +28,7 @@ const Home: React.FunctionComponent<Props> = ({
         <MainLayout location={location} withHeaderBorder={false}>
             <YoastSeo html={page.seo.fullHead} lang="nl" path={path} />
             {/* <HomeHeader /> */}
-            <h1>Helaas! Anderwijs is niet meer...</h1>
-            <p>Je bent op onze website, maar dat is het dan ook.</p>
+            <h2>Helaas! Anderwijs is niet meer...</h2>
 
             <p>
                 Op 30 juni 2024 hebben we namelijk tijdens een algemene
