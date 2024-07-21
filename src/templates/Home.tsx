@@ -79,7 +79,7 @@ const Home: React.FunctionComponent<Props> = ({
                 <a href="https://aas2.anderwijs.nl">administratieysteem</a>{' '}
                 inloggen om je gegevens in te zien. Ook de afgeschermde{' '}
                 <a href="https://cloud.anderwijs.nl">cloud</a> met foto&apos;s
-                is nog online. Voor al het overige je contact opnemen met het
+                is nog online. Voor al het overige kun je contact opnemen met het
                 bestuur op{' '}
                 <a href="mailto:bestuur@anderwijs.nl">bestuur@anderwijs.nl</a>.
             </p>
